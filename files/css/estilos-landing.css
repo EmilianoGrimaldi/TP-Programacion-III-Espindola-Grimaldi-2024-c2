@@ -1,0 +1,30 @@
+body {
+  background-color: black;
+}
+
+.container {
+  background-color: grey;
+}
+
+#bienvenida {
+  background-color: red;
+  color: white;
+  justify-content: center;
+}
+
+#formulario {
+  background-color: #292929;
+  color: white;
+}
+
+#formulario button {
+  width: 33%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#inputNombre {
+  width: 66%;
+  margin-left: auto;
+  margin-right: auto;
+}
