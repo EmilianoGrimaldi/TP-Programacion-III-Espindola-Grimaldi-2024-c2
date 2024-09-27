@@ -16,21 +16,24 @@
     <main>
       <div class="container">
         <div class="row">
-          <div class="col">
-            <div class="d-flex mt-4 mb-4" id="bienvenida">
-              <h1>LE DAMOS LA BIENVENIDA A [NOMBRE DE LA PAGINA]</h1>
+          <div class="col mt-5">
+            <div id="bienvenida">
+              <h1>LE DAMOS LA BIENVENIDA A [*********]</h1>
             </div>
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-6 col-lg-4 mb-4">
-            <h2>aca podria ir una imagen</h2>
+        <div class="row">
+          <div class="col mt-5">
+            <div id="imagen">
+              <h2>aca podria ir el logo</h2>
+            </div>
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-6 col-lg-4">
-            <form class="d-flex flex-column mb-4" id="formulario">
-              <div class="mb-3 mt-4">
+        <div class="row">
+          <div class="col mt-5">
+            <form id="formulario">
+              <h3>Por favor, díganos su nombre.</h3>
+              <div class="mb-3 mt-3">
                 <input
                   type="text"
                   class="form-control"
@@ -38,7 +41,22 @@
                   placeholder="Nombre"
                 />
               </div>
-              <button type="submit" class="btn btn-primary mb-4">Submit</button>
+              <div class="row">
+                <div class="col-6">
+                  <button type="button" class="btn btn-primary" id="btnAceptar">
+                    Aceptar
+                  </button>
+                </div>
+                <div class="col-6">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="btnCancelar"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </div>
             </form>
           </div>
         </div>
@@ -50,5 +68,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="files\js\landing.js"></script>
   </body>
 </html>

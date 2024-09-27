@@ -1,30 +1,51 @@
 body {
-  background-color: black;
+  background-color: #242124;
 }
 
 .container {
   background-color: grey;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
 }
 
 #bienvenida {
   background-color: red;
-  color: white;
-  justify-content: center;
+  text-align: center;
+}
+
+#imagen {
+  background-color: aquamarine;
+  text-align: center;
+  color: black;
 }
 
 #formulario {
-  background-color: #292929;
-  color: white;
+  background-color: #242124;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 500px;
+  height: 300px;
+  border-radius: 20px;
+}
+#formulario h3 {
+  margin-top: 20px;
+  text-align: center;
 }
 
-#formulario button {
-  width: 33%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#inputNombre {
-  width: 66%;
-  margin-left: auto;
-  margin-right: auto;
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #ffa500;
+  --bs-btn-border-color: #ffa500;
+  --bs-btn-hover-bg: #d99007;
+  --bs-btn-hover-border-color: #d99007;
+  --bs-btn-active-bg: #ffa500;
+  --bs-btn-active-border-color: #ffa500;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #ffa500;
+  --bs-btn-disabled-border-color: #ffa500;
 }
