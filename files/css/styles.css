@@ -1,56 +1,21 @@
-body
-{
-    background-color: #242124;
+.redesContainer {
+  width: 30px;
+  height: 30px;
+  background-color: #a99985;
+  margin: 5px;
+  border-radius: 50%;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-header
-{
-    background-color: #70798C;
-    height: 150px;
+#categorias li {
+  display: inline;
+  margin: 5px;
 }
 
-#contenedorSearch select
-{
-    width: 200px;
+#categorias a {
+  color: black;
+  text-decoration: none;
 }
-
-#navSearch
-{
-    height: 100px;
-}
-
-.btnSearch
-{
-    width: 40px;
-    height: 40px;
-}
-
-#contenedorCart
-{
-    font-size: 25px;  
-}
-
-.redesContainer
-{
-    width: 30px;
-    height: 30px;
-    background-color: #A99985;
-    margin: 5px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#categorias li
-{
-    display: inline;
-    margin: 5px;
-}
-
-#categorias a
-{
-    color: black;
-    text-decoration: none;
-}
-
