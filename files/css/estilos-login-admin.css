@@ -1,0 +1,42 @@
+body {
+  background-color: #242124;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.container {
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cajaLogin {
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #242124;
+  width: 800px;
+}
+
+.izquierda {
+  border-radius: 10px;
+  background-color: #2c262c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagen img {
+  width: 200px;
+}
+
+.derecha h2 {
+  text-align: center;
+}
+
+.botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
