@@ -2,7 +2,7 @@ body {
   background-color: #242124;
 }
 
-.container {
+#containerMain {
   background-color: grey;
   height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -26,7 +26,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  margin: auto;
   width: 500px;
   height: 300px;
   border-radius: 20px;
@@ -48,4 +47,9 @@ body {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #ffa500;
   --bs-btn-disabled-border-color: #ffa500;
+}
+
+#containerFooter {
+  background-color: yellowgreen;
+  text-align: center;
 }

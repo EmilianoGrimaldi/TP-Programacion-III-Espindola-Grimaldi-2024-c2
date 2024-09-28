@@ -14,7 +14,7 @@
   </head>
   <body>
     <main>
-      <div class="container">
+      <div class="container" id="containerMain">
         <div class="row">
           <div class="col mt-5">
             <div id="bienvenida">
@@ -30,7 +30,9 @@
           </div>
         </div>
         <div class="row">
-          <div class="col mt-5">
+          <div
+            class="col-12 mt-5 d-flex justify-content-center align-items-center"
+          >
             <form id="formulario">
               <h3>Por favor, díganos su nombre.</h3>
               <div class="mb-3 mt-3">
@@ -42,17 +44,24 @@
                 />
               </div>
               <div class="row">
-                <div class="col-6">
+                <div class="col">
                   <button type="button" class="btn btn-primary" id="btnAceptar">
                     Aceptar
                   </button>
-                </div>      
+                </div>
               </div>
             </form>
           </div>
         </div>
       </div>
     </main>
+    <footer>
+      <div class="container" id="containerFooter">
+        <div>
+          <p>2024 © Todos los derechos reservados</p>
+        </div>
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

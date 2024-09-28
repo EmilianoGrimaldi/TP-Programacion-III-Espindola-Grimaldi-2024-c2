@@ -1,5 +1,3 @@
-//alerta a mejorar
-
 function alertarNombre() {
   let nombre = document.getElementById("inputNombre").value;
   if (nombre != "") {
