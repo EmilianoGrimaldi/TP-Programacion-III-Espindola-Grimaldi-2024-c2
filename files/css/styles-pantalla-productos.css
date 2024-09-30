@@ -1,0 +1,107 @@
+body {
+  background-color: #242124;
+}
+
+.redesContainer {
+  width: 30px;
+  height: 30px;
+  background-color: #a99985;
+  margin: 5px;
+  border-radius: 50%;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#categorias li a {
+  background-color: #dad2bc;
+  border: 0;
+}
+
+#logo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+#container {
+  background-color: #70798c;
+  border-radius: 50px;
+  border: 5px solid white;
+}
+
+#categorias li {
+  display: inline;
+  margin: 5px;
+}
+
+#categorias a {
+  color: black;
+  text-decoration: none;
+}
+
+#contenedorProductos {
+  height: 1200px;
+  background-color: #70798c;
+  border-radius: 50px;
+  border: 5px solid white;
+}
+
+#contenedorProductos img {
+  width: 150px;
+  height: 225px;
+  border-radius: 20px;
+}
+
+#contenedorProductos button {
+  height: 100%;
+  width: 50%;
+}
+
+#contenedorProductos .btn-primary {
+  --bs-btn-color: black;
+  --bs-btn-border-color: #dad2bc;
+  --bs-btn-bg: #dad2bc;
+  --bs-btn-hover-bg: #d99007;
+  --bs-btn-hover-border-color: #d99007;
+  --bs-btn-active-bg: #ffa500;
+  --bs-btn-active-border-color: #ffa500;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #ffa500;
+  --bs-btn-disabled-border-color: #ffa500;
+}
+
+.contenedorJuegos {
+  background-color: #a99985;
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+}
+
+.contenedorJuegos a {
+  width: 100%;
+  height: 70%;
+  background-color: #dad2bc;
+  border: 0;
+}
+
+.btn-info {
+  --bs-btn-hover-bg: #dad2bc;
+}
+.btn-secondary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #a99985;
+  --bs-btn-hover-bg: #d99007;
+  --bs-btn-hover-border-color: #d99007;
+  --bs-btn-active-bg: #ffa500;
+  --bs-btn-active-border-color: #ffa500;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #ffa500;
+  --bs-btn-disabled-border-color: #ffa500;
+}
+
+footer p {
+  color: white;
+}

@@ -2,7 +2,7 @@ function alertarNombre() {
   let nombre = document.getElementById("inputNombre").value;
   if (nombre != "") {
     //- Hacer una validacion al input -
-    location.href = "index.html";
+    location.href = "pantalla-productos.html";
   }
 }
 
