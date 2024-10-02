@@ -1,9 +1,8 @@
 body {
-  background-color: #242124;
+  /* background-color: #242124; */
 }
 
-#logo
-{
+#logo {
   width: 130px;
   height: 130px;
   border-radius: 50%;
@@ -16,15 +15,29 @@ body {
   color: white;
 }
 
+#icono {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+#btnToggler {
+  font-size: 30px;
+}
+
 #bienvenida {
-  background-color: red;
   text-align: center;
 }
 
 #imagen {
-  background-color: aquamarine;
   text-align: center;
   color: black;
+  background-color: aqua;
+}
+#imagen img {
+  height: 300px;
+  width: 300px;
 }
 
 #formulario {
