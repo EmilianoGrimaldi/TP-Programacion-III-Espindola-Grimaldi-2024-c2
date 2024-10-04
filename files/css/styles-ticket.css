@@ -1,0 +1,19 @@
+body {
+  height: 100vh;
+  background-color: #242124;
+}
+
+article {
+  width: 50%;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #A99985;
+}
+
+#datosCompra ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
