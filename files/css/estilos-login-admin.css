@@ -1,22 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
 body {
   background-color: #242124;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.redesContainer {
+  width: 30px;
+  height: 30px;
+  background-color: #a99985;
+  margin: 5px;
+  border-radius: 50%;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rowNav {
+  background-color: #70798c;
+  width: 100%;
+  border-radius: 20px;
+  border: 5px solid white;
+  padding: 5px;
+}
+
+.izquierdaNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.imagenLogo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+.izquierdaNav a {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.medioNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.links {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.links li {
+  list-style: none;
+}
+.links li a {
+  text-decoration: none;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
   color: white;
 }
 
-.container {
-  background-color: grey;
+.derechaNav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#contenedorMain {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .cajaLogin {
   border-radius: 20px;
   padding: 20px;
-  background-color: #242124;
+  background-color: #70798c;
   width: 800px;
+  border: 5px solid white;
 }
 
 .izquierda {
@@ -28,7 +100,9 @@ body {
 }
 
 .imagen img {
-  width: 200px;
+  height: 220px;
+  width: 220px;
+  border-radius: 10px;
 }
 
 .derecha h2 {
@@ -39,4 +113,17 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.btn-primary {
+  --bs-btn-color: black;
+  --bs-btn-border-color: #dad2bc;
+  --bs-btn-bg: #dad2bc;
+  --bs-btn-hover-bg: #dad2bcc6;
+  --bs-btn-hover-border-color: #dad2bcc6;
+  --bs-btn-active-bg: #ffa500;
+  --bs-btn-active-border-color: #ffa500;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #ffa500;
+  --bs-btn-disabled-border-color: #ffa500;
 }
