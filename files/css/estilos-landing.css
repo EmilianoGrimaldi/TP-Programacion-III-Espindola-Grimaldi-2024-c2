@@ -1,7 +1,3 @@
-body {
-  /* background-color: #242124; */
-}
-
 #logo {
   width: 130px;
   height: 130px;
@@ -10,7 +6,7 @@ body {
 
 #containerMain {
   background-color: grey;
-  height: 100vh;
+  height: 120vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
 }
@@ -33,11 +29,10 @@ body {
 #imagen {
   text-align: center;
   color: black;
-  background-color: aqua;
 }
 #imagen img {
-  height: 300px;
-  width: 300px;
+  height: 150px;
+  width: 150px;
 }
 
 #formulario {
@@ -67,9 +62,4 @@ body {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #ffa500;
   --bs-btn-disabled-border-color: #ffa500;
-}
-
-#containerFooter {
-  background-color: yellowgreen;
-  text-align: center;
 }
