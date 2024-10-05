@@ -18,44 +18,31 @@
     <link rel="stylesheet" href="files/css/styles-pantalla-productos.css" />
   </head>
   <body>
-    <div class="container">
-      <nav>
-        <div class="d-flex align-items-center justify-content-center">
-          <div class="redesContainer">
-            <a href=""><i class="bi bi-whatsapp" style="color: green"></i></a>
-          </div>
-          <div class="redesContainer">
-            <a href=""><i class="bi bi-facebook" style="color: blue"></i></a>
-          </div>
-          <div class="redesContainer">
-            <a href=""><i class="bi bi-instagram" style="color: pink"></i></a>
+    <header>
+      <nav class="navbar container mt-4">
+        <div class="container d-flex justify-content-center">
+          <div class="row rowNav">
+            <div class="col izquierdaNav">
+              <div class="imagenLogo">
+                <img src="files\images\logos\4.webp" alt="" />
+              </div>
+              <a href="pantalla-productos.html">GAMEREEL</a>
+            </div>
+            <div class="col medioNav">
+              <ul class="links">
+                <li><a href="pantalla-productos.html">Inicio</a></li>
+                <li><a href="login-administrador.html">Administrador</a></li>
+                <li><a href="#">Juegos</a></li>
+                <li><a href="#">Peliculas</a></li>
+              </ul>
+            </div>
+            <div class="col derechaNav">
+              <div class="col-1 mt-3" id="icono">
+                <i class="bi bi-brightness-high" id="iconoToggler"></i>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-    </div>
-    <header class="container" id="container">
-      <nav class="row" style="height: 150px">
-        <div class="d-flex align-items-center justify-content-center">
-          <img id="logo" src="/files/images/logos/4.webp" alt="Logo" />
-        </div>
-      </nav>
-      <nav class="d-flex justify-content-center">
-        <ul id="categorias" class="p-0 m-0 mb-2 d-flex">
-          <li>
-            <a
-              href=""
-              class="btn btn-info d-flex justify-content-center align-items-center"
-              ><i class="bi bi-joystick me-1"></i>Juegos</a
-            >
-          </li>
-          <li>
-            <a
-              href=""
-              class="btn btn-info d-flex justify-content-center align-items-center"
-              ><i class="bi bi-film me-1"></i>Peliculas</a
-            >
-          </li>
-        </ul>
       </nav>
     </header>
     <section class="container" id="">
@@ -529,5 +516,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    >
+    <script src="files\js\pantalla-productos.js"></script>
   </body>
 </html>

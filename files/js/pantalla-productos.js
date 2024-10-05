@@ -1,12 +1,3 @@
-function alertarNombre() {
-  let nombre = document.getElementById("inputNombre").value;
-
-  if (nombre != "") {
-    //- Hacer una validacion al input -
-    location.href = "pantalla-productos.html";
-  }
-}
-
 //funcion para cambiar el icono según el tema y lo guarda en localStorage.
 function cambiarIconoSegunTema() {
   if (html.getAttribute("data-bs-theme") == "light") {
@@ -45,7 +36,3 @@ window.onload = temaLocalStorage;
 let html = document.getElementsByTagName("html")[0];
 let iconoToggler = document.getElementById("iconoToggler");
 iconoToggler.addEventListener("click", cambiarIconoSegunTema);
-
-//evento click asociado al boton aceptar del form.
-let btnAceptar = document.getElementById("btnAceptar");
-btnAceptar.addEventListener("click", alertarNombre);

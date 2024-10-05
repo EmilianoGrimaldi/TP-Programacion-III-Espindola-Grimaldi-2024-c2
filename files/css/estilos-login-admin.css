@@ -7,17 +7,6 @@
 body {
   background-color: #242124;
 }
-.redesContainer {
-  width: 30px;
-  height: 30px;
-  background-color: #a99985;
-  margin: 5px;
-  border-radius: 50%;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .rowNav {
   background-color: #70798c;
@@ -75,6 +64,15 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+#icono {
+  display: flex;
+  align-items: center;
+}
+
+#iconoToggler {
+  font-size: 30px;
 }
 
 #contenedorMain {
