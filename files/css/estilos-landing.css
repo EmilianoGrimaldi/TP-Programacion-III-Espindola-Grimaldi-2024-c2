@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
 body {
   /* background-color: #242124; */
 }
@@ -22,7 +29,7 @@ body {
   margin-right: 10px;
 }
 
-#btnToggler {
+#iconoToggler {
   font-size: 30px;
 }
 
@@ -33,7 +40,6 @@ body {
 #imagen {
   text-align: center;
   color: black;
-  background-color: aqua;
 }
 #imagen img {
   height: 300px;
@@ -56,14 +62,13 @@ body {
 }
 
 .btn-primary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #ffa500;
-  --bs-btn-border-color: #ffa500;
-  --bs-btn-hover-bg: #d99007;
-  --bs-btn-hover-border-color: #d99007;
+  --bs-btn-color: black;
+  --bs-btn-border-color: #dad2bc;
+  --bs-btn-bg: #dad2bc;
+  --bs-btn-hover-bg: #dad2bcc6;
+  --bs-btn-hover-border-color: #dad2bcc6;
   --bs-btn-active-bg: #ffa500;
   --bs-btn-active-border-color: #ffa500;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #ffa500;
   --bs-btn-disabled-border-color: #ffa500;
