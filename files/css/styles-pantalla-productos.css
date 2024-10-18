@@ -99,7 +99,7 @@ body {
 }
 
 #contenedorProductos {
-  height: 1200px;
+  height: auto;
   background-color: #70798c;
   border-radius: 50px;
   border: 5px solid white;
@@ -130,6 +130,9 @@ body {
 }
 
 .contenedorJuegos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #a99985;
   width: 250px;
   height: 350px;
@@ -160,4 +163,8 @@ body {
 
 footer p {
   color: white;
+}
+
+.contBotones{
+  margin-top: 5px;
 }

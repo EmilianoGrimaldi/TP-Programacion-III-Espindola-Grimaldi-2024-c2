@@ -1,3 +1,5 @@
+const btnDetalles = document.getElementsByClassName("btnDetalles");
+
 //funcion para cambiar el icono según el tema y lo guarda en localStorage.
 function cambiarIconoSegunTema() {
   if (html.getAttribute("data-bs-theme") == "light") {
@@ -29,6 +31,48 @@ function temaLocalStorage() {
       break;
   }
 }
+
+function createModal({
+  title = "Modal Title",
+  body = "Modal Body",
+  footer = "",
+  size = "md",
+}) {
+  const modalId = "dynamicModal";
+
+  // Crear el modal
+  const modalHtml = `
+      <div class="modal fade" id="${modalId}" tabindex="-1" aria-labelledby="${modalId}Label" aria-hidden="true">
+        <div class="modal-dialog modal-${size}">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="${modalId}Label">${title}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ${body}
+            </div>
+            <div class="modal-footer">
+              ${footer}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+  // Insertar el modal en el body
+  document.body.insertAdjacentHTML("beforeend", modalHtml);
+
+  // Mostrar el modal
+  const modalElement = new bootstrap.Modal(document.getElementById(modalId));
+  modalElement.show();
+
+  // Eliminar el modal del DOM cuando se cierra
+  document.getElementById(modalId).addEventListener("hidden.bs.modal", () => {
+    document.getElementById(modalId).remove();
+  });
+}
+
 // llamo a la funcion y se la asigno a window.onload (cuando carga la pagina).
 window.onload = temaLocalStorage;
 
@@ -36,3 +80,15 @@ window.onload = temaLocalStorage;
 let html = document.getElementsByTagName("html")[0];
 let iconoToggler = document.getElementById("iconoToggler");
 iconoToggler.addEventListener("click", cambiarIconoSegunTema);
+
+for (const b of btnDetalles) {
+  console.log(b);
+  b.addEventListener("click", () => {
+    createModal({
+      title: "Detalles del producto",
+      body: "",
+      footer: "",
+      size: "lg",
+    });
+  });
+}
