@@ -13,11 +13,17 @@ function cambiarIconoSegunTema() {
     iconoToggler.classList.remove("bi-brightness-high-fill");
     iconoToggler.classList.add("bi-moon-stars-fill");
     html.setAttribute("data-bs-theme", "dark");
+
+    body.classList.add("dark-mode");
+
     localStorage.setItem("theme", "dark");
   } else {
     iconoToggler.classList.add("bi-brightness-high-fill");
     iconoToggler.classList.remove("bi-moon-stars-fill");
     html.setAttribute("data-bs-theme", "light");
+
+    body.classList.remove("dark-mode");
+
     localStorage.setItem("theme", "light");
   }
 }
@@ -30,11 +36,13 @@ function temaLocalStorage() {
       iconoToggler.classList.remove("bi-brightness-high-fill");
       iconoToggler.classList.add("bi-moon-stars-fill");
       html.setAttribute("data-bs-theme", "dark");
+      body.classList.add("dark-mode");
       break;
     case (null, "light"):
       iconoToggler.classList.add("bi-brightness-high-fill");
       iconoToggler.classList.remove("bi-moon-stars-fill");
       html.setAttribute("data-bs-theme", "light");
+      body.classList.remove("dark-mode");
       break;
   }
 }
@@ -46,6 +54,20 @@ let btnIngresoRapido = document.getElementById("btnIngresoRapido");
 btnIngresoRapido.addEventListener("click", autocompletarLogin);
 
 //evento click enviado al icono.
+let body = document.querySelector("body");
 let html = document.getElementsByTagName("html")[0];
 let iconoToggler = document.getElementById("iconoToggler");
 iconoToggler.addEventListener("click", cambiarIconoSegunTema);
+
+//menu hamburguesa responsive
+const nav = document.getElementById("nav");
+const abrir = document.getElementById("abrir");
+const cerrar = document.getElementById("cerrar");
+
+abrir.addEventListener("click", () => {
+  nav.classList.add("visible");
+});
+
+cerrar.addEventListener("click", () => {
+  nav.classList.remove("visible");
+});
