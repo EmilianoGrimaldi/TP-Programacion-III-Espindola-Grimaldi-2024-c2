@@ -99,7 +99,7 @@ body {
 }
 
 #contenedorProductos {
-  height: auto;
+  height: 1200px;
   background-color: #70798c;
   border-radius: 50px;
   border: 5px solid white;
@@ -165,6 +165,6 @@ footer p {
   color: white;
 }
 
-.contBotones{
+.contBotones {
   margin-top: 5px;
 }

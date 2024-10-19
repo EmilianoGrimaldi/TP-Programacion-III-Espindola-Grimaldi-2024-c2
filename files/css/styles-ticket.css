@@ -8,7 +8,7 @@ article {
   height: auto;
   border: 1px solid black;
   border-radius: 10px;
-  background-color: #A99985;
+  background-color: #a99985;
 }
 
 #datosCompra ul {
@@ -17,3 +17,8 @@ article {
   margin: 0px;
 }
 
+#imgLogo {
+  margin-top: 4px;
+  width: 80px;
+  border-radius: 50%;
+}
