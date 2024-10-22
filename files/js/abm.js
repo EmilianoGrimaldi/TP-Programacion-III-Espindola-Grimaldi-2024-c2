@@ -1,3 +1,8 @@
+import {
+  cambiarIconoSegunTema,
+  temaLocalStorage,
+} from "./pantalla-productos.js";
+
 const icon = document.getElementById("icon");
 const btnEditar = document.getElementById("btnEditar");
 
@@ -58,4 +63,24 @@ btnEditar.addEventListener("click", () => {
     footer: "",
     size: "lg",
   });
+});
+
+// llamo a la funcion y se la asigno a window.onload (cuando carga la pagina).
+window.onload = temaLocalStorage;
+
+//evento click enviado al icono.
+let iconoToggler = document.getElementById("iconoToggler");
+iconoToggler.addEventListener("click", cambiarIconoSegunTema);
+
+//menu hamburguesa responsive
+const nav = document.getElementById("nav");
+const abrir = document.getElementById("abrir");
+const cerrar = document.getElementById("cerrar");
+
+abrir.addEventListener("click", () => {
+  nav.classList.add("visible");
+});
+
+cerrar.addEventListener("click", () => {
+  nav.classList.remove("visible");
 });

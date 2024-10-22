@@ -19,344 +19,316 @@
   </head>
   <body>
     <header>
-      <nav class="navbar container mt-4">
-        <div class="container d-flex justify-content-center">
-          <div class="row rowNav">
-            <div class="col izquierdaNav">
-              <div class="imagenLogo">
-                <img src="files\images\logos\4.webp" alt="" />
-              </div>
-              <a href="pantalla-productos.html">GAMEREEL</a>
-            </div>
-            <div class="col medioNav">
-              <ul class="links">
-                <li><a href="pantalla-productos.html">Inicio</a></li>
-                <li><a href="login-administrador.html">Administrador</a></li>
-                <li><a href="#">Juegos</a></li>
-                <li><a href="#">Peliculas</a></li>
-              </ul>
-            </div>
-            <div class="col derechaNav">
-              <div class="col-1 mt-3" id="icono">
-                <i class="bi bi-brightness-high" id="iconoToggler"></i>
-              </div>
-            </div>
-          </div>
+      <div class="container mt-4" id="contenedor">
+        <div class="izquierdaNav">
+          <img class="logo" src="files/images/logos/4.webp" alt="Logo" />
+          <a href="pantalla-productos.html">GAMEREEL</a>
         </div>
-      </nav>
+        <nav class="nav" id="nav">
+          <button class="cerrarMenu" id="cerrar">
+            <i class="bi bi-x"></i>
+          </button>
+          <ul class="nav-links">
+            <li><a href="pantalla-productos.html">Inicio</a></li>
+            <li><a href="login-administrador.html">Administrador</a></li>
+            <li><a href="#">Juegos</a></li>
+            <li><a href="#">Peliculas</a></li>
+          </ul>
+        </nav>
+        <div class="derechaNav">
+          <div class="iconoModo">
+            <i class="bi bi-brightness-high" id="iconoToggler"></i>
+          </div>
+          <button class="abrirMenu" id="abrir">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
     </header>
-    <section class="container" id="">
+   <section class="container" id="">
       <div class="row mt-3">
-        <div id="contenedorProductos" class="col-12">
+        <div id="contenedorProductos" class="col-12 pb-4">
           <div class="container">
-            <div class="row mt-3" style="height: 350px">
-              <div class="d-flex justify-content-evenly">
-                <div class="col-2 m-2 contenedorJuegos">
-                  <div class="d-flex flex-column">
-                    <div class="row">
-                      <div class="d-flex justify-content-center">
-                        <img
-                          src="https://store-images.s-microsoft.com/image/apps.25322.14537704372270848.6ecb6038-5426-409a-8660-158d1eb64fb0.d230176a-d7a2-4696-ad23-ff53a6e004df?mode=scale&q=90&h=225&w=150&background=%23FFFFFF"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="d-flex gap-2 contBotones">
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Editar
-                          </button>
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Eliminar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+            <div class="row d-flex justify-content-evenly">
+                <div
+                class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex flex-column align-items-center mt-4 contenedorJuegos"
+              >
+                <i id="icon" class="bi-plus-circle" style="font-size: 200px;"></i>
+              </div>
+              <div
+                class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex flex-column align-items-center mt-4 contenedorJuegos"
+              >
+                <div class="row">
+                  <div class="d-flex justify-content-center mt-3">
+                    <img
+                      src="https://store-images.s-microsoft.com/image/apps.25322.14537704372270848.6ecb6038-5426-409a-8660-158d1eb64fb0.d230176a-d7a2-4696-ad23-ff53a6e004df?mode=scale&q=90&h=225&w=150&background=%23FFFFFF"
+                      alt=""
+                    />
                   </div>
-                </div>
-                <div class="col-2 m-2 contenedorJuegos">
-                  <div class="d-flex flex-column">
-                    <div class="row">
-                      <div class="d-flex justify-content-center">
-                        <img
-                          src="https://i.3djuegos.com/juegos/19862/ea_sports_fc_25/fotos/ficha/ea_sports_fc_25-5908048.webp"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="d-flex gap-2 contBotones">
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Editar
-                          </button>
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Eliminar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="d-flex justify-content-center mt-1">
+                    <p class="mb-0">aca va el precio</p>
                   </div>
-                </div>
-
-                <div class="col-2 m-2 contenedorJuegos">
-                  <div class="d-flex flex-column">
-                    <div class="row">
-                      <div class="d-flex justify-content-center">
-                        <img
-                          src="https://juegosdigitalesargentina.com/files/images/thumbs/productos_300x400_1718122217-dragon-ball-sparking-zero-ultimate-edition-ps5-pre-orden-0.webp"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="d-flex gap-2 contBotones">
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Editar
-                          </button>
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Eliminar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-2 m-2 contenedorJuegos">
-                  <div class="d-flex flex-column">
-                    <div class="row">
-                      <div class="d-flex justify-content-center">
-                        <img
-                          src="https://juegosdigitalesargentina.com/files/images/productos/1718042126-call-of-duty-black-ops-6-ps4-pre-orden-0.webp"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="d-flex gap-2 contBotones">
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Editar
-                          </button>
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Eliminar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="d-flex justify-content-center mt-1 gap-2">
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-pencil me-2"></i>Editar
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-trash me-2"></i>Eliminar
+                    </button>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row mt-3">
-              <div class="d-flex justify-content-evenly">
-                <div class="col-2 m-2 contenedorJuegos">
-                  <div class="d-flex flex-column">
-                    <div class="row">
-                      <div class="d-flex justify-content-center">
-                        <img
-                          src="https://hips.hearstapps.com/hmg-prod/images/joker-2-poster-66166118a290d.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="d-flex gap-2 contBotones">
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Editar
-                          </button>
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Eliminar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+              <div
+                class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex flex-column align-items-center mt-4 contenedorJuegos"
+              >
+                <div class="row">
+                  <div class="d-flex justify-content-center mt-3">
+                    <img
+                      src="https://i.3djuegos.com/juegos/19862/ea_sports_fc_25/fotos/ficha/ea_sports_fc_25-5908048.webp"
+                      alt=""
+                    />
                   </div>
-                </div>
-                <div class="col-2 m-2 contenedorJuegos">
-                  <div class="d-flex flex-column">
-                    <div class="row">
-                      <div class="d-flex justify-content-center">
-                        <img
-                          src="https://i.blogs.es/073fcf/deadpool-3-cartel-ryan-reynolds/650_1200.jpeg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="d-flex gap-2 contBotones">
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Editar
-                          </button>
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Eliminar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="d-flex justify-content-center mt-1">
+                    <p class="mb-0">aca va el precio</p>
                   </div>
-                </div>
-
-                <div class="col-2 m-2 contenedorJuegos">
-                  <div class="d-flex flex-column">
-                    <div class="row">
-                      <div class="d-flex justify-content-center">
-                        <img
-                          src="https://pics.filmaffinity.com/Transformers_One-329708311-large.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="d-flex gap-2 contBotones">
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Editar
-                          </button>
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Eliminar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-2 m-2 contenedorJuegos">
-                  <div class="d-flex flex-column">
-                    <div class="row">
-                      <div class="d-flex justify-content-center">
-                        <img
-                          src="https://warp.la/wp-content/uploads/2023/11/KINGDON-OF-THE-PLANET-OF-THE-APES-02-664x1024.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="d-flex gap-2 contBotones">
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Editar
-                          </button>
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Eliminar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="d-flex justify-content-center mt-1 gap-2">
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-pencil me-2"></i>Editar
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-trash me-2"></i>Eliminar
+                    </button>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row mt-3">
-              <div class="d-flex justify-content-evenly">
-                <div class="col-2 m-2 contenedorJuegos">
-                  <div class="d-flex flex-column">
-                    <div class="row">
-                      <div class="d-flex justify-content-center">
-                        <img
-                          src="https://image.api.playstation.com/vulcan/ap/rnd/202308/0312/aff71a0ced271048f5079b1fcf715bcb45110efc13e9704a.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="d-flex gap-2 contBotones">
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Editar
-                          </button>
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Eliminar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+              <div
+                class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex flex-column align-items-center mt-4 contenedorJuegos"
+              >
+                <div class="row">
+                  <div class="d-flex justify-content-center mt-3">
+                    <img
+                      src="https://juegosdigitalesargentina.com/files/images/thumbs/productos_300x400_1718122217-dragon-ball-sparking-zero-ultimate-edition-ps5-pre-orden-0.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="d-flex justify-content-center mt-1">
+                    <p class="mb-0">aca va el precio</p>
+                  </div>
+                  <div class="d-flex justify-content-center mt-1 gap-2">
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-pencil me-2"></i>Editar
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-trash me-2"></i>Eliminar
+                    </button>
                   </div>
                 </div>
-                <div class="col-2 m-2 contenedorJuegos">
-                  <div class="d-flex flex-column">
-                    <div class="row">
-                      <div class="d-flex justify-content-center">
-                        <img
-                          src="https://www.excelsior.com.mx/media/inside-the-note/pictures/2024/07/18/captura_de_pantalla_2024-07-18_a_las_10.28.13.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="d-flex gap-2 contBotones">
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Editar
-                          </button>
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Eliminar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+              </div>
+              <div
+                class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex flex-column align-items-center mt-4 contenedorJuegos"
+              >
+                <div class="row">
+                  <div class="d-flex justify-content-center mt-3">
+                    <img
+                      src="https://juegosdigitalesargentina.com/files/images/productos/1718042126-call-of-duty-black-ops-6-ps4-pre-orden-0.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="d-flex justify-content-center mt-1">
+                    <p class="mb-0">aca va el precio</p>
+                  </div>
+                  <div class="d-flex justify-content-center mt-1 gap-2">
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-pencil me-2"></i>Editar
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-trash me-2"></i>Eliminar
+                    </button>
                   </div>
                 </div>
-
-                <div class="col-2 m-2 contenedorJuegos">
-                  <div class="d-flex flex-column">
-                    <div class="row">
-                      <div class="d-flex justify-content-center">
-                        <img
-                          src="https://image.api.playstation.com/vulcan/ap/rnd/202305/2309/02a7644b160e11678ca5332d6e0eb5fdd87902aa3087d446.png"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="d-flex gap-2 contBotones">
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Editar
-                          </button>
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Eliminar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+              </div>
+              <div
+                class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex flex-column align-items-center mt-4 contenedorJuegos"
+              >
+                <div class="row">
+                  <div class="d-flex justify-content-center mt-3">
+                    <img
+                      src="https://hips.hearstapps.com/hmg-prod/images/joker-2-poster-66166118a290d.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="d-flex justify-content-center mt-1">
+                    <p class="mb-0">aca va el precio</p>
+                  </div>
+                  <div class="d-flex justify-content-center mt-1 gap-2">
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-pencil me-2"></i>Editar
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-trash me-2"></i>Eliminar
+                    </button>
                   </div>
                 </div>
-
-                <div class="col-2 m-2 contenedorJuegos">
-                  <div class="d-flex flex-column">
-                    <div class="row">
-                      <div class="d-flex justify-content-center">
-                        <img
-                          src="https://pics.filmaffinity.com/Something_in_the_Water-563713498-large.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="d-flex gap-2 contBotones">
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Editar
-                          </button>
-                          <button class="btn btn-primary" type="button">
-                            <i class=""></i>Eliminar
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+              </div>
+              <div
+                class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex flex-column align-items-center mt-4 contenedorJuegos"
+              >
+                <div class="row">
+                  <div class="d-flex justify-content-center mt-3">
+                    <img
+                      src="https://i.blogs.es/073fcf/deadpool-3-cartel-ryan-reynolds/650_1200.jpeg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="d-flex justify-content-center mt-1">
+                    <p class="mb-0">aca va el precio</p>
+                  </div>
+                 <div class="d-flex justify-content-center mt-1 gap-2">
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-pencil me-2"></i>Editar
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-trash me-2"></i>Eliminar
+                    </button>
                   </div>
                 </div>
+              </div>
+              <div
+                class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex flex-column align-items-center mt-4 contenedorJuegos"
+              >
+                <div class="row">
+                  <div class="d-flex justify-content-center mt-3">
+                    <img
+                      src="https://warp.la/wp-content/uploads/2023/11/KINGDON-OF-THE-PLANET-OF-THE-APES-02-664x1024.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="d-flex justify-content-center mt-1">
+                    <p class="mb-0">aca va el precio</p>
+                  </div>
+                  <div class="d-flex justify-content-center mt-1 gap-2">
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-pencil me-2"></i>Editar
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-trash me-2"></i>Eliminar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex flex-column align-items-center mt-4 contenedorJuegos"
+              >
+                <div class="row">
+                  <div class="d-flex justify-content-center mt-3">
+                    <img
+                      src="https://pics.filmaffinity.com/Transformers_One-329708311-large.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="d-flex justify-content-center mt-1">
+                    <p class="mb-0">aca va el precio</p>
+                  </div>
+                 <div class="d-flex justify-content-center mt-1 gap-2">
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-pencil me-2"></i>Editar
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-trash me-2"></i>Eliminar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex flex-column align-items-center mt-4 contenedorJuegos"
+              >
+                <div class="row">
+                  <div class="d-flex justify-content-center mt-3">
+                    <img
+                      src="https://image.api.playstation.com/vulcan/ap/rnd/202308/0312/aff71a0ced271048f5079b1fcf715bcb45110efc13e9704a.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="d-flex justify-content-center mt-1">
+                    <p class="mb-0">aca va el precio</p>
+                  </div>
+                 <div class="d-flex justify-content-center mt-1 gap-2">
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-pencil me-2"></i>Editar
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-trash me-2"></i>Eliminar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex flex-column align-items-center mt-4 contenedorJuegos"
+              >
+                <div class="row">
+                  <div class="d-flex justify-content-center mt-3">
+                    <img
+                      src="https://www.excelsior.com.mx/media/inside-the-note/pictures/2024/07/18/captura_de_pantalla_2024-07-18_a_las_10.28.13.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="d-flex justify-content-center mt-1">
+                    <p class="mb-0">aca va el precio</p>
+                  </div>
+                  <div class="d-flex justify-content-center mt-1 gap-2">
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-pencil me-2"></i>Editar
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-trash me-2"></i>Eliminar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex flex-column align-items-center mt-4 contenedorJuegos"
+              >
+                <div class="row">
+                  <div class="d-flex justify-content-center mt-3">
+                    <img
+                      src="https://image.api.playstation.com/vulcan/ap/rnd/202305/2309/02a7644b160e11678ca5332d6e0eb5fdd87902aa3087d446.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="d-flex justify-content-center mt-1">
+                    <p class="mb-0">aca va el precio</p>
+                  </div>
+                 <div class="d-flex justify-content-center mt-1 gap-2">
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-pencil me-2"></i>Editar
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-trash me-2"></i>Eliminar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex flex-column align-items-center mt-4 contenedorJuegos"
+              >
+                <div class="row">
+                  <div class="d-flex justify-content-center mt-3">
+                    <img
+                      src="https://pics.filmaffinity.com/Something_in_the_Water-563713498-large.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="d-flex justify-content-center mt-1">
+                    <p class="mb-0">aca va el precio</p>
+                  </div>
+                 <div class="d-flex justify-content-center mt-1 gap-2">
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-pencil me-2"></i>Editar
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                      <i class="bi bi-trash me-2"></i>Eliminar
+                    </button>
+                  </div>
               </div>
             </div>
           </div>
@@ -374,6 +346,6 @@
       crossorigin="anonymous"
     ></script>
     >
-    <script src="files\js\pantalla-productos.js"></script>
+    <script type="module" src="files/js/abm.js"></script>
   </body>
 </html>
