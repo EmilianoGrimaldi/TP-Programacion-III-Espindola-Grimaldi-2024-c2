@@ -4,7 +4,7 @@ import {
 } from "./pantalla-productos.js";
 
 const icon = document.getElementById("icon");
-const btnEditar = document.getElementById("btnEditar");
+const btnEditar = document.getElementsByClassName("btnEditar");
 
 function createModal({
   title = "Modal Title",
@@ -56,14 +56,16 @@ icon.addEventListener("click", () => {
   });
 });
 
-btnEditar.addEventListener("click", () => {
-  createModal({
-    title: "Editar producto",
-    body: "",
-    footer: "",
-    size: "lg",
+for (const b of btnEditar) {
+  b.addEventListener("click", () => {
+    createModal({
+      title: "Editar producto",
+      body: "",
+      footer: "",
+      size: "lg",
+    });
   });
-});
+}
 
 // llamo a la funcion y se la asigno a window.onload (cuando carga la pagina).
 window.onload = temaLocalStorage;
