@@ -50,9 +50,59 @@ function createModal({
 icon.addEventListener("click", () => {
   createModal({
     title: "Agregar producto",
-    body: "",
+    body: `<form>
+      <div class="mb-3 d-flex flex-column align-items-center">
+        <label class="mb-2" for="">Seleccione el producto</label>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            id="flexRadioDefault1"
+            checked
+          />
+          <label class="form-check-label" for="flexRadioDefault1">
+            Pelicula
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            id="flexRadioDefault2"
+          />
+          <label class="form-check-label" for="flexRadioDefault2">
+            Juego
+          </label>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="pNombre" class="col-sm-2 col-form-label">Nombre</label>
+        <div class="col-sm-10">
+          <input required type="text" class="form-control" id="pNombre" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="pPrecio" class="col-sm-2 col-form-label">Precio</label>
+        <div class="col-sm-10">
+          <input required type="number" class="form-control" id="pPrecio" min="0"/>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="pPortada" class="col-sm-2 col-form-label"
+          >Url portada</label
+        >
+        <div class="col-sm-10">
+          <input required type="url" class="form-control" id="pPortada" />
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">Agregar</button>
+      </div>
+    </form>`,
     footer: "",
-    size: "lg",
+    size: "md",
   });
 });
 
@@ -60,9 +110,33 @@ for (const b of btnEditar) {
   b.addEventListener("click", () => {
     createModal({
       title: "Editar producto",
-      body: "",
+      body: `<form>
+      <div class="row mb-3">
+        <label for="pNombre" class="col-sm-2 col-form-label">Nombre</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="pNombre" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="pPrecio" class="col-sm-2 col-form-label">Precio</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="pPrecio" min="0"/>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="pPortada" class="col-sm-2 col-form-label"
+          >Url portada</label
+        >
+        <div class="col-sm-10">
+          <input type="url" class="form-control" id="pPortada" />
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">Confirmar</button>
+      </div>
+    </form>`,
       footer: "",
-      size: "lg",
+      size: "md",
     });
   });
 }
