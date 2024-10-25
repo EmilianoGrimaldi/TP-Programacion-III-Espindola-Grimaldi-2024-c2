@@ -55,6 +55,7 @@ body.dark-mode .izquierdaNav a {
   display: flex;
   list-style: none;
   gap: 1rem;
+  align-items: center;
 }
 
 .nav-links li a {
@@ -74,11 +75,34 @@ ul {
 
 .derechaNav {
   display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.derechaNav .carrito-container {
+  display: flex;
+  align-items: center;
+}
+.carrito {
+  font-size: 35px;
+  color: black;
+}
+body.dark-mode .carrito {
+  color: white;
+}
+.numerito {
+  background-color: #2c262c;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+body.dark-mode .numerito {
+  background-color: #a99985;
 }
 
 #iconoToggler {
   font-size: 30px;
-  margin-right: 10px;
   cursor: pointer;
 }
 
@@ -213,17 +237,17 @@ footer p {
     font-size: 30px;
     background-color: transparent;
   }
-@media (max-width:320px){
-  #contenedor{
-    display: block;
+  @media (max-width: 320px) {
+    #contenedor {
+      display: block;
+    }
   }
-}
 
-@media (max-width:240px){
-  .izquierdaNav{
-    display: block;
+  @media (max-width: 240px) {
+    .izquierdaNav {
+      display: block;
+    }
   }
-}
 
   .nav {
     visibility: hidden;
