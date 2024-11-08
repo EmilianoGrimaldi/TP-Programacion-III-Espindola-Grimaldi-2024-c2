@@ -1,21 +1,17 @@
 const sequelize = require("../db/sequelize");
 const { DataTypes } = require("sequelize");
 
-const VentaSequelize = sequelize.define(
-  "Venta",
+const PrecioSequelize = sequelize.define(
+  "Precio",
   {
-    idVenta: {
+    idPrecio: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    idProducto: {
-      type: DataTypes.INTEGER,
-      allowNull: false, // NOT NULL
-    },
-    total: {
+    precio: {
       type: DataTypes.FLOAT,
-      allowNull: false, // NOT NULL
+      allowNull: false,
     },
   },
   {
@@ -23,4 +19,4 @@ const VentaSequelize = sequelize.define(
   }
 );
 
-module.exports = VentaSequelize;
+module.exports = PrecioSequelize;

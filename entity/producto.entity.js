@@ -17,8 +17,8 @@ const ProductoSequelize = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    precio: {
-      type: DataTypes.FLOAT,
+    idPrecio: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     activo: {
