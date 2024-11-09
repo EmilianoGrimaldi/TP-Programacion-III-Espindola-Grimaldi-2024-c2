@@ -17,82 +17,10 @@ body.dark-mode {
   background-color: #242124;
 }
 
-header {
-  padding-inline: 10px;
-}
-
-#contenedor {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-  background-color: #dad2bc;
-  border-radius: 20px;
-  border: 5px solid #242124;
-  width: 100%;
-}
-body.dark-mode #contenedor {
-  background-color: #70798c;
-  border: 5px solid #ececec;
-}
-
-.izquierdaNav {
-  display: flex;
-  align-items: center;
-}
-
-.izquierdaNav a {
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  color: #1c1c1c;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 10px;
-}
-body.dark-mode .izquierdaNav a {
-  color: white;
-}
-
-.logo {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-}
-
-.nav-links li a {
-  font-size: 20px;
-  font-weight: 400;
-  text-decoration: none;
-  color: #1c1c1c;
-}
-body.dark-mode .nav-links li a {
-  color: white;
-}
-
-ul {
-  margin-bottom: 0;
-  padding-left: 0;
-}
-
-.derechaNav {
-  display: flex;
-}
-
 #iconoToggler {
   font-size: 30px;
   margin-right: 10px;
   cursor: pointer;
-}
-
-.abrirMenu,
-.cerrarMenu {
-  display: none;
 }
 
 #contenedorMain {
@@ -154,6 +82,11 @@ body.dark-mode .izquierda {
   color: #242124;
   font-weight: 500;
 }
+.derecha .titulo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 body.dark-mode .derecha h2 {
   color: #ececec;
   font-weight: 500;
@@ -171,7 +104,18 @@ body.dark-mode .form-label {
 .botones {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.botonVolver {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 15px;
+}
+
+.botonVolver i {
+  margin-right: 5px;
+  vertical-align: middle;
 }
 
 .btn-primary {
@@ -201,37 +145,10 @@ footer {
 }
 
 @media (max-width: 550px) {
-  .abrirMenu,
-  .cerrarMenu {
-    display: block;
-    border: 0;
-    font-size: 30px;
-    background-color: transparent;
+  .titulo {
+    margin-top: 15px;
   }
-
-  .nav {
-    visibility: hidden;
+  .titulo #iconoToggler {
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    gap: 15px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #dad2bc;
-    padding: 32px;
-    align-items: flex-end;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-  }
-  body.dark-mode .nav {
-    background-color: #70798c;
-  }
-  .nav.visible {
-    visibility: visible;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: end;
   }
 }

@@ -100,6 +100,11 @@ body.dark-mode .form-control:focus {
   outline: none;
 }
 
+.admin a {
+  text-decoration: underline;
+  color: inherit;
+}
+
 .btn-primary {
   --bs-btn-color: white;
   --bs-btn-border-color: #2c262c;

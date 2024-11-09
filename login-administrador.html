@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./files/css/estilos-login-admin.css" />
   </head>
   <body>
-    <header>
+    <!-- <header>
       <div class="container mt-4" id="contenedor">
         <div class="izquierdaNav">
           <img class="logo" src="files/images/logos/4.webp" alt="Logo" />
@@ -41,7 +41,7 @@
           </button>
         </div>
       </div>
-    </header>
+    </header> -->
     <main>
       <div class="container mt-5" id="contenedorMain">
         <div class="row cajaLogin" id="cajaLogin">
@@ -52,7 +52,13 @@
           </div>
           <div class="col-md-6 derecha">
             <form>
-              <h2>Iniciar Sesion</h2>
+              <div class="titulo">
+                <h2>INICIAR SESIÓN</h2>
+                <div class="iconoModo">
+                  <i class="bi bi-brightness-high" id="iconoToggler"></i>
+                </div>
+              </div>
+
               <div class="mb-3">
                 <label for="usuarioTxt" class="form-label">Usuario</label>
                 <input type="text" class="form-control" id="usuarioTxt" />
@@ -68,7 +74,7 @@
                     class="btn btn-primary"
                     id="btnIngresar"
                   >
-                    Ingresar
+                    INGRESAR
                   </button></a
                 >
                 <button
@@ -76,8 +82,15 @@
                   class="btn btn-primary"
                   id="btnIngresoRapido"
                 >
-                  Ingreso rápido
+                  INGRESO RÁPIDO
                 </button>
+              </div>
+              <div class="botonVolver">
+                <a href="landing-page.html">
+                  <button type="button" class="btn btn-primary">
+                    <i class="bi bi-arrow-return-left"></i>VOLVER A INICIO
+                  </button></a
+                >
               </div>
             </form>
           </div>
