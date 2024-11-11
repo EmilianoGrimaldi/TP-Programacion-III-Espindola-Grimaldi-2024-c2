@@ -1,16 +1,21 @@
 const sequelize = require("../db/sequelize");
 const { DataTypes } = require("sequelize");
 
-const PrecioSequelize = sequelize.define(
-  "Precio",
+const UsuarioSequelize = sequelize.define(
+  "Usuario",
   {
-    idPrecio: {
+    id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    precio: {
-      type: DataTypes.FLOAT,
+    correo: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    contraseña: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
@@ -19,4 +24,4 @@ const PrecioSequelize = sequelize.define(
   }
 );
 
-module.exports = PrecioSequelize;
+module.exports = UsuarioSequelize;

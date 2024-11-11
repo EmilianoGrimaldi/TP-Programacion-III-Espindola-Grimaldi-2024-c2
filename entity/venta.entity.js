@@ -13,6 +13,10 @@ const VentaSequelize = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false, // NOT NULL
     },
+    idUsuario: {
+      type: DataTypes.STRING,
+      allowNull: false, // NOT NULL
+    },
     total: {
       type: DataTypes.FLOAT,
       allowNull: false, // NOT NULL

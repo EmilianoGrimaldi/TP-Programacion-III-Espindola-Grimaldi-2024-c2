@@ -13,12 +13,16 @@ const ProductoSequelize = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    urlImagen: {
-      type: DataTypes.STRING,
+    precio: {
+      type: DataTypes.FLOAT,
       allowNull: false,
     },
-    idPrecio: {
-      type: DataTypes.INTEGER,
+    imagen: {
+      type: DataTypes.BLOB,
+      allowNull: false,
+    },
+    descripcion: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     activo: {

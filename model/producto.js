@@ -1,16 +1,20 @@
 class Producto {
   nombre;
   precio;
-  urlImagen;
-  idTipo;
+  imagen;
+  descripcion;
   activo;
 
-  constructor(nombre, precio, urlImagen, idTipo, activo) {
+  constructor(nombre, precio, imagen, descripcion, activo) {
     this.nombre = nombre;
     this.precio = precio;
-    this.urlImagen = urlImagen;
-    this.idTipo = idTipo;
+    this.imagen = imagen;
+    this.descripcion = descripcion;
     this.activo = activo;
+  }
+
+  toJson() {
+    return JSON.stringify(this);
   }
 }
 
