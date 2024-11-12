@@ -13,7 +13,7 @@ const VentaSequelize = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false, // NOT NULL
     },
-    idUsuario: {
+    nombreUsuario: {
       type: DataTypes.STRING,
       allowNull: false, // NOT NULL
     },
