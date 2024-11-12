@@ -3,7 +3,7 @@ function alertarNombre() {
 
   if (nombre != "") {
     //- Hacer una validacion al input -
-    location.href = "pantalla-productos.html";
+    location.href = "http://localhost:3000/pantalla-productos";
   }
 }
 
