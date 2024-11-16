@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-
+//require("dotenv").config();
+process.loadEnvFile();
 // Deshabilitar cors
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -21,9 +22,7 @@ const path = require("path");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
-
-//require("dotenv").config();
-process.loadEnvFile();
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Importante para tomar datos del body!
 const bodyParser = require("body-parser");
@@ -33,16 +32,13 @@ app.use(bodyParser.json());
 const sequelize = require("./db/sequelize.js");
 
 //Inicio de rutas
-const productosRoutes = require("./routes/producto.routes.js");
+const productosRoutes = require("./routes/productos.routes.js");
 app.use("/pantalla-productos", productosRoutes);
 
+const abmRoutes = require("./routes/abm.routes.js");
+app.use("/abm", abmRoutes);
+
 app.get("/", async (req, res) => {
-  try {
-    await sequelize.authenticate();
-    console.log("Connection has been established successfully.");
-  } catch (error) {
-    console.error("Unable to connect to the database:", error);
-  }
   res.send("Ruta por defecto");
 });
 

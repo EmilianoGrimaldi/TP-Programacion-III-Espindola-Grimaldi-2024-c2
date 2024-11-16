@@ -17,8 +17,8 @@ const ProductoSequelize = sequelize.define(
       type: DataTypes.FLOAT,
       allowNull: false,
     },
-    imagen: {
-      type: DataTypes.BLOB,
+    portada: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     descripcion: {
@@ -26,7 +26,7 @@ const ProductoSequelize = sequelize.define(
       allowNull: false,
     },
     activo: {
-      defaultValue: false,
+      defaultValue: true,
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },

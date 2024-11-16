@@ -3,58 +3,33 @@ const router = express.Router();
 const Producto = require("../model/producto.js");
 const ProductoSequelize = require("../entity/producto.entity.js");
 
-const validarCamposProductos = (req, res, next) => {
-  const nombre = req.body.nombre;
-  const precio = req.body.precio;
-  const imagen = req.body.imagen;
-  const descripcion = req.body.descripcion;
-
-  if (typeof nombre !== "string" || nombre.trim() === "") {
-    return res.status(400).send("Error, el campo nombre es obligatorio.");
-  }
-  if (typeof precio !== "number" || precio <= 0) {
-    return res
-      .status(400)
-      .send("Error, el campo precio es obligatorio y debe ser mayor a cero.");
-  }
-  if (typeof imagen !== "string" || imagen.trim() === "") {
-    return res.status(400).send("Error, el campo imagen es obligatorio.");
-  }
-  if (typeof descripcion !== "string" || descripcion.trim() === "") {
-    return res
-      .status(400)
-      .send(
-        "Error, el campo descripción es obligatorio. Indicar el tipo de producto."
-      );
-  }
-
-  next();
-};
-
 router.get("/", async (req, res) => {
   try {
+    await ProductoSequelize.sync();
     const productos = await ProductoSequelize.findAll({
       where: {
-        activo: false,
+        activo: true,
       },
     });
     res.render("pantalla-productos", { productos });
   } catch (error) {
-    res.send("Error");
+    res
+      .status(400)
+      .json({ mensaje: "No se pueden mostrar los productos", status: 400 });
   }
 });
 
-router.post("/", validarCamposProductos, async (req, res) => {
+/* router.post("/", validarCamposProductos, uploads.single("portada"), async (req, res) => {
   try {
     const nombre = req.body.nombre;
-    const precio = req.body.precio;
-    const imagen = req.body.imagen;
+    const precio = parseFloat(req.body.precio);
+    const portada = req.file.filename;
     const descripcion = req.body.descripcion;
 
     const producto = new Producto();
     producto.nombre = nombre;
     producto.precio = precio;
-    producto.imagen = imagen;
+    producto.portada = portada;
     producto.descripcion = descripcion;
 
     const resultado = await ProductoSequelize.create({
@@ -72,7 +47,7 @@ router.get("/:id", async (req, res) => {
     const resultado = await ProductoSequelize.findOne({
       where: {
         id: req.params.id,
-        activo: false,
+        activo: true,
       },
     });
 
@@ -112,5 +87,5 @@ router.delete("/:id", async (req, res) => {
     res.send("Error");
   }
 });
-
+ */
 module.exports = router;
