@@ -93,6 +93,37 @@ router.post(
     }
   }
 );
+router.get("/juegos", async (req, res) => {
+  try {
+    const productos = await ProductoSequelize.findAll({
+      where: {
+        activo: true,
+        descripcion: "Juego",
+      },
+    });
+    res.render("abm", { productos });
+  } catch (error) {
+    res
+      .status(400)
+      .json({ mensaje: "No se pueden mostrar los productos", status: 400 });
+  }
+});
+
+router.get("/peliculas", async (req, res) => {
+  try {
+    const productos = await ProductoSequelize.findAll({
+      where: {
+        activo: true,
+        descripcion: "Pelicula",
+      },
+    });
+    res.render("abm", { productos });
+  } catch (error) {
+    res
+      .status(400)
+      .json({ mensaje: "No se pueden mostrar los productos", status: 400 });
+  }
+});
 
 router.get("/:id", async (req, res) => {
   try {
