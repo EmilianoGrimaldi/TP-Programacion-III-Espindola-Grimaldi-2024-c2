@@ -54,7 +54,7 @@ const validarCamposProductos = (req, res, next) => {
 
 router.get("/", async (req, res) => {
   try {
-    await ProductoSequelize.destroy({ truncate: true });
+    //await ProductoSequelize.destroy({ truncate: true });
     await ProductoSequelize.sync();
     const productos = await ProductoSequelize.findAll();
     res.render("abm", { productos });
