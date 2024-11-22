@@ -5,6 +5,8 @@ const DetalleVenta = require("../entity/detalleVenta.entity.js");
 
 router.post("/", async (req, res) => {
   try {
+    await VentaSequelize.sync();
+    await DetalleVenta.sync();
     const { usuario, carrito } = req.body;
 
     let totalVenta = 0;
@@ -12,7 +14,6 @@ router.post("/", async (req, res) => {
     for (const item of carrito) {
       totalVenta += item.precio * item.cantidad;
     }
-
     const nuevaVenta = await VentaSequelize.create({
       usuario: usuario,
       total: totalVenta,

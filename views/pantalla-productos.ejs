@@ -24,8 +24,9 @@
         <div id="contenedorProductos" class="col-12">
           <div class="container">
             <div class="row d-flex justify-content-evenly">
-              <% productos.forEach(producto => { %> <%-include("producto-card",
-              {producto: producto}) %> <% }); %>
+              <% productos.forEach(producto => { %>
+              <%-include("producto-card-carrito", {producto: producto}) %> <%
+              }); %>
             </div>
           </div>
           <%- include("pantalla-productos-paginacion") %>

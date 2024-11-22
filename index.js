@@ -21,6 +21,7 @@ const path = require("path");
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+app.engine("html", require("ejs").renderFile);
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
@@ -47,7 +48,7 @@ const detalleVentaRoutes = require("./routes/detalleVentas.routes.js");
 app.use("/ticket", detalleVentaRoutes);
 
 app.get("/", async (req, res) => {
-  res.send("Ruta por defecto");
+  res.render("../public/landing-page.html");
 });
 
 app.listen(process.env.PORT || 3000, () => {
