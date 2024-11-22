@@ -19,9 +19,7 @@ const DetalleVentaSequelize = sequelize.define(
     },
   },
   {
-    timestamps: true,
-    createdAt: "Fecha_venta",
-    updatedAt: false,
+    timestamps: false,
   }
 );
 

@@ -194,14 +194,14 @@ function comprarProducto() {
         });
 
         if (respuesta.ok) {
-          const data = await respuesta.json();
+          const datosVenta = await respuesta.json();
           console.log(
-            `Compra realizada correctamente. ID de la venta: ${data.ventaId}`
+            `Compra realizada correctamente. ID de la venta: ${datosVenta.ventaId}`
           );
           localStorage.removeItem("carrito");
 
           setTimeout(() => {
-            window.location.href = `http://localhost:3000/ticket/${data.ventaId}`;
+            window.location.href = `http://localhost:3000/ticket/${datosVenta.ventaId}`;
           }, 2000);
         } else {
           console.error("Error al guardar la venta.");
