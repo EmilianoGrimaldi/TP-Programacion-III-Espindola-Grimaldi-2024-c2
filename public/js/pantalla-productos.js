@@ -38,6 +38,42 @@ function temaLocalStorage() {
   }
 }
 
+function traerCarritoLocalStorage() {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  return carrito;
+}
+
+function agregarAlCarrito(producto) {
+  const productoEnCarrito = carrito.find((item) => item.id === producto.id);
+
+  if (productoEnCarrito) {
+    productoEnCarrito.cantidad += 1;
+  } else {
+    producto.cantidad = 1;
+    carrito.push(producto);
+  }
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+async function traerProductoPorId(idProducto) {
+  try {
+    const respuesta = await fetch(`/pantalla-productos/${idProducto}`);
+
+    if (!respuesta.ok) {
+      throw new Error("Error al obtener los datos del producto");
+    }
+
+    const producto = await respuesta.json();
+
+    agregarAlCarrito(producto);
+
+    console.log(`Producto ${producto.nombre} añadido al carrito`);
+  } catch (error) {
+    console.error("Hubo un error al añadir el producto al carrito:", error);
+  }
+}
+
 // llamo a la funcion y se la asigno a window.onload (cuando carga la pagina).
 window.onload = temaLocalStorage;
 
@@ -58,6 +94,16 @@ abrir.addEventListener("click", () => {
 
 cerrar.addEventListener("click", () => {
   nav.classList.remove("visible");
+});
+
+let carrito = traerCarritoLocalStorage();
+let btnAñadir = document.querySelectorAll(".aniadir");
+
+btnAñadir.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const idProducto = boton.id;
+    traerProductoPorId(idProducto);
+  });
 });
 
 export { cambiarIconoSegunTema, temaLocalStorage };

@@ -3,6 +3,7 @@ function alertarNombre() {
 
   if (nombre != "") {
     //- Hacer una validacion al input -
+    localStorage.setItem("nombreUsuario", nombre);
     location.href = "http://localhost:3000/pantalla-productos";
   }
 }

@@ -30,6 +30,8 @@ app.use(bodyParser.json());
 
 //Conexion a db
 const sequelize = require("./db/sequelize.js");
+const relacionarEntidades = require("./entity/relaciones.js");
+relacionarEntidades();
 
 //Inicio de rutas
 const productosRoutes = require("./routes/productos.routes.js");
@@ -37,6 +39,12 @@ app.use("/pantalla-productos", productosRoutes);
 
 const abmRoutes = require("./routes/abm.routes.js");
 app.use("/abm", abmRoutes);
+
+const ventasRoutes = require("./routes/venta.routes.js");
+app.use("/carrito", ventasRoutes);
+
+const detalleVentaRoutes = require("./routes/detalleVentas.routes.js");
+app.use("/ticket", detalleVentaRoutes);
 
 app.get("/", async (req, res) => {
   res.send("Ruta por defecto");
