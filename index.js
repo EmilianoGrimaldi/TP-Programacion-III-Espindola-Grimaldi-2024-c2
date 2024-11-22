@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 const sequelize = require("./db/sequelize.js");
 const relacionarEntidades = require("./entity/relaciones.js");
 relacionarEntidades();
-
+sequelize.sync();
 //Inicio de rutas
 const productosRoutes = require("./routes/productos.routes.js");
 app.use("/pantalla-productos", productosRoutes);

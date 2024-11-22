@@ -5,7 +5,6 @@ const ProductoSequelize = require("../entity/producto.entity.js");
 
 router.get("/", async (req, res) => {
   try {
-    await ProductoSequelize.sync();
     const productos = await ProductoSequelize.findAll({
       where: {
         activo: true,

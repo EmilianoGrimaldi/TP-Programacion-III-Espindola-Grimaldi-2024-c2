@@ -54,8 +54,6 @@ const validarCamposProductos = (req, res, next) => {
 
 router.get("/", async (req, res) => {
   try {
-    //await ProductoSequelize.destroy({ truncate: true });
-    await ProductoSequelize.sync();
     const productos = await ProductoSequelize.findAll();
     res.render("abm", { productos });
   } catch (error) {
@@ -97,7 +95,6 @@ router.get("/juegos", async (req, res) => {
   try {
     const productos = await ProductoSequelize.findAll({
       where: {
-        activo: true,
         descripcion: "Juego",
       },
     });
@@ -113,7 +110,6 @@ router.get("/peliculas", async (req, res) => {
   try {
     const productos = await ProductoSequelize.findAll({
       where: {
-        activo: true,
         descripcion: "Pelicula",
       },
     });
