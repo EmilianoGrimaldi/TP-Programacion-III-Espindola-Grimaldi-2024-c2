@@ -3,13 +3,17 @@
 >
   <div class="row">
     <div class="d-flex justify-content-center mt-3">
-      <img src="./uploads/<%=producto.portada%>" alt="imagen" />
+      <img src="<%= producto.portada %>" alt="<%= producto.nombre %>" />
     </div>
     <div class="d-flex justify-content-center mt-1">
       <p class="mb-0">$<%= producto.precio %></p>
     </div>
     <div class="d-flex justify-content-center mt-1">
-      <button class="btn btn-primary" type="button">
+      <button
+        class="btn btn-primary aniadir"
+        id="<%=producto.id %>"
+        type="button"
+      >
         <i class="bi bi-cart-plus me-1"></i>Añadir
       </button>
     </div>

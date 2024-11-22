@@ -19,29 +19,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-/* router.post("/", validarCamposProductos, uploads.single("portada"), async (req, res) => {
-  try {
-    const nombre = req.body.nombre;
-    const precio = parseFloat(req.body.precio);
-    const portada = req.file.filename;
-    const descripcion = req.body.descripcion;
-
-    const producto = new Producto();
-    producto.nombre = nombre;
-    producto.precio = precio;
-    producto.portada = portada;
-    producto.descripcion = descripcion;
-
-    const resultado = await ProductoSequelize.create({
-      ...producto,
-    });
-
-    res.send(resultado);
-  } catch (error) {
-    res.send("Error");
-  }
-});
-
 router.get("/:id", async (req, res) => {
   try {
     const resultado = await ProductoSequelize.findOne({
@@ -57,35 +34,4 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
-  try {
-    const resultado = await ProductoSequelize.update(
-      {
-        ...req.body,
-      },
-      {
-        where: {
-          id: req.params.id,
-          activo: false,
-        },
-      }
-    );
-    res.send(resultado);
-  } catch (error) {
-    res.send("Error");
-  }
-});
-
-router.delete("/:id", async (req, res) => {
-  try {
-    const resultado = ProductoSequelize.update(
-      { activo: true },
-      { where: { id: req.params.id } }
-    );
-    res.send(resultado);
-  } catch (error) {
-    res.send("Error");
-  }
-});
- */
 module.exports = router;

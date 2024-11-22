@@ -40,7 +40,7 @@ app.use("/pantalla-productos", productosRoutes);
 const abmRoutes = require("./routes/abm.routes.js");
 app.use("/abm", abmRoutes);
 
-const ventasRoutes = require("./routes/venta.routes.js");
+const ventasRoutes = require("./routes/ventas.routes.js");
 app.use("/carrito", ventasRoutes);
 
 const detalleVentaRoutes = require("./routes/detalleVentas.routes.js");
