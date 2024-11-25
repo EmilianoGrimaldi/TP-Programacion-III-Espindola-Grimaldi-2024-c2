@@ -245,7 +245,7 @@ function comprarProducto() {
               const data = await respuesta.json();
               Swal.fire({
                 title: "Compra realizada",
-                text: "Muchas gracias por su compra!",
+                text: `Muchas gracias ${nombre} por tu compra!`,
                 icon: "success",
                 timer: 3000,
                 showConfirmButton: false,
