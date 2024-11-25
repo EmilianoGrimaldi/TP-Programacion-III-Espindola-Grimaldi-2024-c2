@@ -43,7 +43,28 @@ function traerCarritoLocalStorage() {
   return carrito;
 }
 
+function actualizarNumeritoCarrito() {
+  let acumuladorCarrito = 0;
+  carrito.forEach((element) => {
+    acumuladorCarrito += element.cantidad;
+  });
+  numeritoCarrito.innerText = acumuladorCarrito;
+}
+
 function agregarAlCarrito(producto) {
+  Toastify({
+    text: `"${producto.nombre} agregado al carrito"`,
+    duration: 2000,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      textTransform: "uppercase",
+    },
+    onClick: function () {}, // Callback after click
+  }).showToast();
+
   const productoEnCarrito = carrito.find((item) => item.id === producto.id);
 
   if (productoEnCarrito) {
@@ -52,8 +73,8 @@ function agregarAlCarrito(producto) {
     producto.cantidad = 1;
     carrito.push(producto);
   }
-
   localStorage.setItem("carrito", JSON.stringify(carrito));
+  actualizarNumeritoCarrito();
 }
 
 async function traerProductoPorId(idProducto) {
@@ -75,7 +96,10 @@ async function traerProductoPorId(idProducto) {
 }
 
 // llamo a la funcion y se la asigno a window.onload (cuando carga la pagina).
-window.onload = temaLocalStorage;
+window.onload = () => {
+  temaLocalStorage();
+  actualizarNumeritoCarrito();
+};
 
 //evento click enviado al icono.
 let body = document.querySelector("body");
@@ -98,6 +122,7 @@ cerrar.addEventListener("click", () => {
 
 let carrito = traerCarritoLocalStorage();
 let btnAñadir = document.querySelectorAll(".aniadir");
+const numeritoCarrito = document.getElementById("numerito");
 
 btnAñadir.forEach((boton) => {
   boton.addEventListener("click", () => {

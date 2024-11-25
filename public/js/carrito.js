@@ -70,9 +70,9 @@ function createHtmlCarrito() {
             <div class="carritoProductoCantidad">
               <small>CANTIDAD</small>
               <div class="selectorCantidad">
-                <i class="bi bi-dash-circle"></i>
+                <i class="bi bi-dash-circle disminuir" id="${element.id}"></i>
                 <p>${element.cantidad}</p>
-                <i class="bi bi-plus-circle"></i>
+                <i class="bi bi-plus-circle aumentar" id="${element.id}"></i>
               </div>
             </div>
           </div>
@@ -147,9 +147,26 @@ function createHtmlCarrito() {
 function vaciarCarrito() {
   let botonVaciar = document.getElementById("carritoAccionesVaciar");
   botonVaciar.addEventListener("click", () => {
-    localStorage.removeItem("carrito");
-    createHtmlCarrito();
-    reasignarEventosAElementos();
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Se van a borrar todos los productos del carrito.",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Sí",
+      cancelButtonText: "No",
+      customClass: {
+        popup: "swal2-custom-popup",
+        title: "swal2-custom-title",
+        confirmButton: "swal2-custom-button",
+        cancelButton: "swal2-custom-button",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("carrito");
+        createHtmlCarrito();
+        reasignarEventosAElementos();
+      }
+    });
   });
 }
 
@@ -161,6 +178,23 @@ function vaciarProducto() {
   botonCarritoProductoEliminar.forEach((boton) => {
     boton.addEventListener("click", () => {
       let idProducto = parseInt(boton.id);
+      let productoEliminado = carrito.find(
+        (producto) => producto.id === idProducto
+      );
+
+      Toastify({
+        text: `"${productoEliminado.nombre} eliminado del carrito"`,
+        duration: 2000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          textTransform: "uppercase",
+        },
+        onClick: function () {}, // Callback after click
+      }).showToast();
+
       carrito = carrito.filter((producto) => producto.id !== idProducto);
 
       localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -175,44 +209,156 @@ function comprarProducto() {
   const botonCompra = document.getElementById("carritoAccionesComprar");
 
   botonCompra.addEventListener("click", async () => {
-    const carrito = traerCarritoLocalStorage();
-    const nombre = traerNombreUsuarioLocalStorage();
+    Swal.fire({
+      title: "¿Desea confirmar la compra?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Sí",
+      cancelButtonText: "No",
+      customClass: {
+        popup: "swal2-custom-popup",
+        title: "swal2-custom-title",
+        confirmButton: "swal2-custom-button",
+        cancelButton: "swal2-custom-button",
+      },
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const carrito = traerCarritoLocalStorage();
+        const nombre = traerNombreUsuarioLocalStorage();
 
-    if (carrito.length > 0) {
-      try {
-        const venta = {
-          usuario: nombre,
-          carrito,
-        };
+        if (carrito.length > 0) {
+          try {
+            const venta = {
+              usuario: nombre,
+              carrito,
+            };
 
-        const respuesta = await fetch("http://localhost:3000/carrito", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(venta),
-        });
+            const respuesta = await fetch("http://localhost:3000/carrito", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(venta),
+            });
 
-        if (respuesta.ok) {
-          const datosVenta = await respuesta.json();
-          console.log(
-            `Compra realizada correctamente. ID de la venta: ${datosVenta.ventaId}`
-          );
-          localStorage.removeItem("carrito");
-
-          setTimeout(() => {
-            window.location.href = `http://localhost:3000/ticket/${datosVenta.ventaId}`;
-          }, 2000);
-        } else {
-          console.error("Error al guardar la venta.");
+            if (respuesta.ok) {
+              const data = await respuesta.json();
+              Swal.fire({
+                title: "Compra realizada",
+                text: "Muchas gracias por su compra!",
+                icon: "success",
+                timer: 3000,
+                showConfirmButton: false,
+                customClass: {
+                  popup: "swal2-custom-popup",
+                  title: "swal2-custom-title",
+                  confirmButton: "swal2-custom-button",
+                  cancelButton: "swal2-custom-button",
+                },
+              });
+              localStorage.removeItem("carrito");
+              setTimeout(() => {
+                window.location.href = `http://localhost:3000/ticket/${data.ventaId}`;
+              }, 3000);
+            } else {
+              console.error("Error al realizar la compra.");
+            }
+          } catch (error) {
+            console.error("Error en la solicitud:", error);
+          }
         }
-      } catch (error) {
-        console.error("Error en la solicitud:", error);
       }
-    } else {
-      console.log("No hay productos en el carrito para comprar.");
-    }
+    });
   });
+}
+
+//funcion para aumentar la cantidad del producto que esté en el carrito.
+function aumentarCantidadProductoEnCarrito() {
+  let carrito = traerCarritoLocalStorage();
+  let btnAumentar = document.querySelectorAll(".aumentar");
+
+  btnAumentar.forEach((boton) => {
+    boton.addEventListener("click", () => {
+      let idProducto = parseInt(boton.id);
+      let productoEnCarrito = carrito.find(
+        (element) => element.id === idProducto
+      );
+
+      if (productoEnCarrito) {
+        Toastify({
+          text: `"${productoEnCarrito.nombre} sumado"`,
+          duration: 2000,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            textTransform: "uppercase",
+          },
+          onClick: function () {}, // Callback after click
+        }).showToast();
+
+        productoEnCarrito.cantidad += 1;
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        createHtmlCarrito();
+        reasignarEventosAElementos();
+      }
+    });
+  });
+}
+
+//funcion para disminuir la cantidad del producto que esté en el carrito.
+function disminuirCantidadProductoEnCarrito() {
+  let carrito = traerCarritoLocalStorage();
+  let btnDisminuir = document.querySelectorAll(".disminuir");
+
+  btnDisminuir.forEach((boton) => {
+    boton.addEventListener("click", () => {
+      let idProducto = parseInt(boton.id);
+      let productoEnCarrito = carrito.find(
+        (element) => element.id === idProducto
+      );
+
+      if (productoEnCarrito && productoEnCarrito.cantidad > 1) {
+        Toastify({
+          text: `"${productoEnCarrito.nombre} restado"`,
+          duration: 2000,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            textTransform: "uppercase",
+          },
+          onClick: function () {}, // Callback after click
+        }).showToast();
+
+        productoEnCarrito.cantidad -= 1;
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        createHtmlCarrito();
+        reasignarEventosAElementos();
+      } else {
+        Toastify({
+          text: "la cantidad del producto no puede ser cero.",
+          duration: 2000,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            textTransform: "uppercase",
+          },
+          onClick: function () {}, // Callback after click
+        }).showToast();
+      }
+    });
+  });
+}
+
+// funcion que llama a aumentar y disminuir.
+function actualizarCantidadProductos() {
+  aumentarCantidadProductoEnCarrito();
+  disminuirCantidadProductoEnCarrito();
 }
 
 // funcion para reasignar eventos a los elementos despues de recargar el html.
@@ -220,6 +366,7 @@ function reasignarEventosAElementos() {
   vaciarCarrito();
   vaciarProducto();
   comprarProducto();
+  actualizarCantidadProductos();
 }
 
 window.onload = function () {

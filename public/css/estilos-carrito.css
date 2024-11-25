@@ -17,6 +17,52 @@ body.dark-mode {
   background-color: #242124;
 }
 
+.swal2-custom-popup {
+  border-radius: 15px;
+  background: #dad2bc;
+  color: black;
+  border: 5px solid #242124;
+}
+body.dark-mode .swal2-custom-popup {
+  background: #70798c;
+  color: white;
+  border: 5px solid white;
+}
+
+.swal2-icon.swal2-question {
+  color: #242124;
+  border-color: #242124;
+}
+body.dark-mode .swal2-icon.swal2-question {
+  color: white;
+  border-color: white;
+}
+
+.swal2-custom-button {
+  background-color: #242124;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+}
+body.dark-mode .swal2-custom-button {
+  background-color: #dad2bc;
+  color: black;
+}
+
+.toastify {
+  border-radius: 15px;
+  font-size: 12px;
+  background: #242124;
+  box-shadow: none;
+}
+
+body.dark-mode .toastify {
+  background: #dad2bc;
+  color: black;
+  box-shadow: none;
+}
+
 p {
   margin-bottom: 0;
 }

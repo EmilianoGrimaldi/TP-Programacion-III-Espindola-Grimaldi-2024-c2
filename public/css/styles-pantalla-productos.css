@@ -13,6 +13,19 @@ body.dark-mode {
   background-color: #242124;
 }
 
+.toastify {
+  border-radius: 15px;
+  font-size: 12px;
+  background: #242124;
+  box-shadow: none;
+}
+
+body.dark-mode .toastify {
+  background: #dad2bc;
+  color: black;
+  box-shadow: none;
+}
+
 #contenedor {
   display: flex;
   align-items: center;
@@ -78,12 +91,16 @@ ul {
   align-items: center;
   gap: 10px;
 }
+.derechaNav a {
+  text-decoration: none;
+}
 
 .derechaNav .carrito-container {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .carrito {
   font-size: 35px;
   color: black;
@@ -97,6 +114,7 @@ body.dark-mode .carrito {
   padding: 2px 6px;
   border-radius: 5px;
   font-size: 14px;
+  font-weight: bold;
 }
 body.dark-mode .numerito {
   background-color: #a99985;
