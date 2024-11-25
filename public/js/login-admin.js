@@ -1,8 +1,10 @@
+const user = document.getElementById("usuarioTxt");
+const contrasenia = document.getElementById("passTxt");
+
 //funcion que autocompleta los campos usuario y contraseña
 function autocompletarLogin() {
-  let usuario = "admin";
-  let pass = "asdasd";
-
+  const usuario = "admin";
+  const pass = "asdasd";
   document.getElementById("usuarioTxt").value = usuario;
   document.getElementById("passTxt").value = pass;
 }
@@ -46,6 +48,7 @@ function temaLocalStorage() {
       break;
   }
 }
+
 // llamo a la funcion y se la asigno a window.onload (cuando carga la pagina).
 window.onload = temaLocalStorage;
 
@@ -59,15 +62,65 @@ let html = document.getElementsByTagName("html")[0];
 let iconoToggler = document.getElementById("iconoToggler");
 iconoToggler.addEventListener("click", cambiarIconoSegunTema);
 
-//menu hamburguesa responsive
 const nav = document.getElementById("nav");
 const abrir = document.getElementById("abrir");
 const cerrar = document.getElementById("cerrar");
 
-abrir.addEventListener("click", () => {
+/* abrir.addEventListener("click", () => {
   nav.classList.add("visible");
-});
+}); */
 
-cerrar.addEventListener("click", () => {
+/* cerrar.addEventListener("click", () => {
   nav.classList.remove("visible");
+}); */
+
+async function crearAdminAutomatico() {
+  try {
+    const pedido = await fetch("http://localhost:3000/admin");
+  } catch (error) {
+    Swal.fire({
+      text: `${error}`,
+      icon: "error",
+    });
+  }
+}
+crearAdminAutomatico();
+
+async function loguear(datosInicioSesion) {
+  try {
+    const pedido = await fetch("http://localhost:3000/admin/login", {
+      method: "POST",
+      body: JSON.stringify(datosInicioSesion),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return pedido.json();
+  } catch (error) {
+    Swal.fire({
+      text: `${error}`,
+      icon: "error",
+    });
+  }
+}
+
+document.getElementById("btnIngresar").addEventListener("click", async (e) => {
+  e.preventDefault();
+  const user = document.getElementById("usuarioTxt").value;
+  const contrasenia = document.getElementById("passTxt").value;
+
+  const datosInicioSesion = {
+    user: `${user}`,
+    contrasenia: `${contrasenia}`,
+  };
+
+  const resultado = await loguear(datosInicioSesion);
+  if (resultado.status !== 200) {
+    Swal.fire({
+      text: `${resultado.mensaje}`,
+      icon: "error",
+    });
+  } else {
+    window.location.href = "/abm";
+  }
 });

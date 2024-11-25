@@ -47,6 +47,9 @@ app.use("/carrito", ventasRoutes);
 const detalleVentaRoutes = require("./routes/detalleVentas.routes.js");
 app.use("/ticket", detalleVentaRoutes);
 
+const adminRoutes = require("./routes/admin.routes.js");
+app.use("/admin", adminRoutes);
+
 app.get("/", async (req, res) => {
   res.render("../public/landing-page.html");
 });

@@ -231,6 +231,12 @@ footer p {
   margin-top: 5px;
 }
 
+#paginas {
+  background-color: #dad2bcc6;
+  border-color: black;
+  color: black;
+}
+
 @media (max-width: 768px) {
   .abrirMenu,
   .cerrarMenu {

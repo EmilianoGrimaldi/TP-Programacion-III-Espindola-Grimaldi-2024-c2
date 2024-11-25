@@ -29,7 +29,8 @@
               }); %>
             </div>
           </div>
-          <%- include("pantalla-productos-paginacion") %>
+          <%-include("pantalla-productos-paginacion",{currentPage: currentPage,
+          totalPages: totalPages, size: size, modo}) %>
         </div>
       </div>
     </section>

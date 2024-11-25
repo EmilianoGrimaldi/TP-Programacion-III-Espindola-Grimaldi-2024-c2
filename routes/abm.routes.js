@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
     if (tipo !== "image") {
       callback(new Error("No es imagen"));
     } else {
-      const nombre = Date.now() + "-" + file.originalname;
+      const nombre = file.originalname;
       callback(null, nombre);
     }
   },
@@ -36,9 +36,9 @@ const validarCamposProductos = (req, res, next) => {
   if (typeof nombre !== "string" || nombre.trim() === "") {
     return res.json({ mensaje: "El campo nombre es obligatorio", status: 400 });
   }
-  if (typeof precio !== "number" || precio <= 0) {
+  if (typeof precio !== "number" || parseFloat(precio) <= 0 || isNaN(precio)) {
     return res.json({
-      mensaje: "Error, el campo precio es obligatorio y debe ser mayor a cero.",
+      mensaje: "El campo precio es obligatorio y debe ser mayor a cero.",
       status: 400,
     });
   }

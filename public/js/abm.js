@@ -69,36 +69,6 @@ function createModal({
   });
 }
 
-function createAlert(
-  { message = "Alert message", type = "info", dismissible = false },
-  element
-) {
-  const alertId = "dynamicAlert";
-
-  // Crear el alert
-  const alertHtml = `
-      <div id="${alertId}" class="container mt-4 alert alert-${type} alert-dismissible fade show" role="alert">
-        ${message}
-        ${
-          dismissible
-            ? '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'
-            : ""
-        }
-      </div>
-    `;
-
-  element.insertAdjacentHTML("beforeend", alertHtml);
-
-  /* setTimeout(() => {
-    const alertElement = document.getElementById(alertId);
-    if (alertElement) {
-      alertElement.classList.remove("show");
-      alertElement.classList.add("fade");
-      setTimeout(() => alertElement.remove(), 150); // Esperar a que termine la animación
-    }
-  }, 3000); */
-}
-
 btnAgregar.addEventListener("click", () => {
   createModal({
     title: "Agregar producto",
@@ -169,14 +139,10 @@ btnAgregar.addEventListener("click", () => {
     // Llamar a la función para enviar los datos
     const result = await insertarDatos(formData);
     if (result.status === 200) {
-      createAlert(
-        {
-          message: `${result.mensaje}`,
-          type: "success",
-          dismissible: false,
-        },
-        form
-      );
+      Swal.fire({
+        text: `${result.mensaje}`,
+        icon: "success",
+      });
 
       document.getElementById("submit").setAttribute("disabled", "true");
 
@@ -184,14 +150,10 @@ btnAgregar.addEventListener("click", () => {
         location.reload();
       }, 2000);
     } else {
-      createAlert(
-        {
-          message: `${result.mensaje}`,
-          type: "danger",
-          dismissible: true,
-        },
-        form
-      );
+      Swal.fire({
+        text: `${result.mensaje}`,
+        icon: "info",
+      });
     }
   });
 });
@@ -204,20 +166,10 @@ btnEditar.forEach((boton) => {
       const producto = await response.json();
 
       if (producto.status === 400) {
-        createModal({
-          title: "Error",
-          body: `<div id="alerta"></div>`,
-          footer: "",
-          size: "sm",
+        Swal.fire({
+          text: `${producto.mensaje}`,
+          icon: "error",
         });
-        createAlert(
-          {
-            message: `${producto.mensaje}`,
-            type: "danger",
-            dismissible: false,
-          },
-          document.getElementById("alerta")
-        );
       } else {
         createModal({
           title: "Editar producto",
@@ -285,45 +237,27 @@ btnEditar.forEach((boton) => {
           const formData = new FormData(form);
           const result = await editarProducto(formData, idProducto);
           if (result.status === 200) {
-            createAlert(
-              {
-                message: `${result.mensaje}`,
-                type: "success",
-                dismissible: false,
-              },
-              form
-            );
+            Swal.fire({
+              text: `${result.mensaje}`,
+              icon: "success",
+            });
             document.getElementById("submit").setAttribute("disabled", "true");
             setTimeout(() => {
               location.reload();
             }, 2000);
           } else {
-            createAlert(
-              {
-                message: `${result.mensaje}`,
-                type: "danger",
-                dismissible: true,
-              },
-              form
-            );
+            Swal.fire({
+              text: `${result.mensaje}`,
+              icon: "error",
+            });
           }
         });
       }
     } catch (error) {
-      createModal({
-        title: "Error",
-        body: `<div id="alerta"></div>`,
-        footer: "",
-        size: "sm",
+      Swal.fire({
+        text: `${error}`,
+        icon: "error",
       });
-      createAlert(
-        {
-          message: `${error}`,
-          type: "danger",
-          dismissible: false,
-        },
-        document.getElementById("alerta")
-      );
     }
   });
 });
@@ -337,55 +271,25 @@ btnEliminar.forEach((boton) => {
       if (response.ok) {
         const result = await eliminarProducto(idProducto);
         if (result.status === 200) {
-          createModal({
-            title: "",
-            body: `<div id="alerta"></div>`,
-            footer: "",
-            size: "sm",
+          Swal.fire({
+            text: `${result.mensaje}`,
+            icon: "success",
           });
-          createAlert(
-            {
-              message: `Eliminado con exito`,
-              type: "success",
-              dismissible: false,
-            },
-            document.getElementById("alerta")
-          );
           setTimeout(() => {
             location.reload();
           }, 2000);
         }
       } else {
-        createModal({
-          title: "",
-          body: `<div id="alerta"></div>`,
-          footer: "",
-          size: "sm",
+        Swal.fire({
+          text: `${result.mensaje}`,
+          icon: "error",
         });
-        createAlert(
-          {
-            message: `${result.mensaje}`,
-            type: "danger",
-            dismissible: false,
-          },
-          document.getElementById("alerta")
-        );
       }
     } catch (error) {
-      createModal({
-        title: "",
-        body: `<div id="alerta"></div>`,
-        footer: "",
-        size: "sm",
+      Swal.fire({
+        text: `${error}`,
+        icon: "error",
       });
-      createAlert(
-        {
-          message: `${error}`,
-          type: "danger",
-          dismissible: false,
-        },
-        document.getElementById("alerta")
-      );
     }
   });
 });
@@ -399,55 +303,25 @@ btnActivar.forEach((boton) => {
       if (response.ok) {
         const result = await reactivarProducto(idProducto);
         if (result.status === 200) {
-          createModal({
-            title: "",
-            body: `<div id="alerta"></div>`,
-            footer: "",
-            size: "sm",
+          Swal.fire({
+            text: `${result.mensaje}`,
+            icon: "success",
           });
-          createAlert(
-            {
-              message: `Activado con exito`,
-              type: "success",
-              dismissible: false,
-            },
-            document.getElementById("alerta")
-          );
           setTimeout(() => {
             location.reload();
           }, 2000);
         }
       } else {
-        createModal({
-          title: "",
-          body: `<div id="alerta"></div>`,
-          footer: "",
-          size: "sm",
+        Swal.fire({
+          text: `${result.mensaje}`,
+          icon: "error",
         });
-        createAlert(
-          {
-            message: `${result.mensaje}`,
-            type: "danger",
-            dismissible: false,
-          },
-          document.getElementById("alerta")
-        );
       }
     } catch (error) {
-      createModal({
-        title: "",
-        body: `<div id="alerta"></div>`,
-        footer: "",
-        size: "sm",
+      Swal.fire({
+        text: `${error}`,
+        icon: "error",
       });
-      createAlert(
-        {
-          message: `${error}`,
-          type: "danger",
-          dismissible: false,
-        },
-        document.getElementById("alerta")
-      );
     }
   });
 });
@@ -460,20 +334,10 @@ async function insertarDatos(formData) {
     });
     return pedido.json();
   } catch (error) {
-    createModal({
-      title: "",
-      body: `<div id="alerta"></div>`,
-      footer: "",
-      size: "sm",
+    Swal.fire({
+      text: `${error}`,
+      icon: "error",
     });
-    createAlert(
-      {
-        message: `${error}`,
-        type: "danger",
-        dismissible: false,
-      },
-      document.getElementById("alerta")
-    );
   }
 }
 
@@ -485,20 +349,10 @@ async function editarProducto(formData, idProducto) {
     });
     return pedido.json();
   } catch (error) {
-    createModal({
-      title: "",
-      body: `<div id="alerta"></div>`,
-      footer: "",
-      size: "sm",
+    Swal.fire({
+      text: `${error}`,
+      icon: "error",
     });
-    createAlert(
-      {
-        message: `${error}`,
-        type: "danger",
-        dismissible: false,
-      },
-      document.getElementById("alerta")
-    );
   }
 }
 
@@ -509,20 +363,10 @@ async function eliminarProducto(idProducto) {
     });
     return await pedido.json();
   } catch (error) {
-    createModal({
-      title: "",
-      body: `<div id="alerta"></div>`,
-      footer: "",
-      size: "sm",
+    Swal.fire({
+      text: `${error}`,
+      icon: "error",
     });
-    createAlert(
-      {
-        message: `${error}`,
-        type: "danger",
-        dismissible: false,
-      },
-      document.getElementById("alerta")
-    );
   }
 }
 
@@ -533,19 +377,9 @@ async function reactivarProducto(idProducto) {
     });
     return await pedido.json();
   } catch (error) {
-    createModal({
-      title: "",
-      body: `<div id="alerta"></div>`,
-      footer: "",
-      size: "sm",
+    Swal.fire({
+      text: `${error}`,
+      icon: "error",
     });
-    createAlert(
-      {
-        message: `${error}`,
-        type: "danger",
-        dismissible: false,
-      },
-      document.getElementById("alerta")
-    );
   }
 }

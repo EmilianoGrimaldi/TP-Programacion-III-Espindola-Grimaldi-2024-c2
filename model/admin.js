@@ -1,6 +1,6 @@
-class Usuario {
+class Admin {
   correo;
-  contrasenia;
+  contraseña;
 
   constructor() {}
 
@@ -9,4 +9,4 @@ class Usuario {
   }
 }
 
-module.exports = Usuario;
+module.exports = Admin;
