@@ -36,6 +36,13 @@ function desencriptar(iv, passEncriptada) {
 const validarIngresoAdmin = (req, res, next) => {
   const { user, contrasenia } = req.body;
 
+  if (user === "" && contrasenia === "") {
+    return res.json({
+      mensaje: "Usuario y contraseña requerido",
+      status: 400,
+    });
+  }
+
   if (!user) {
     return res.json({
       mensaje: "Usuario requerido",
