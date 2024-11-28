@@ -185,6 +185,26 @@ body.dark-mode .btn-primary {
   font-weight: 400;
 }
 
+body.dark-mode .btn.disabled,
+body.dark-mode .btn:disabled,
+body.dark-mode fieldset:disabled .btn {
+  color: black;
+  pointer-events: none;
+  background-color: #dad2bcc6;
+  border-color: #dad2bc;
+  opacity: var(--bs-btn-disabled-opacity);
+}
+
+.btn.disabled,
+.btn:disabled,
+fieldset:disabled .btn {
+  color: white;
+  pointer-events: none;
+  background-color: #2c262c;
+  border-color: #2c262c;
+  opacity: var(--bs-btn-disabled-opacity);
+}
+
 body.dark-mode .form-control {
   background-color: #dad2bc;
   color: black;
