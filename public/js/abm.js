@@ -142,6 +142,10 @@ btnAgregar.addEventListener("click", () => {
       Swal.fire({
         text: `${result.mensaje}`,
         icon: "success",
+        customClass: {
+          popup: "popup",
+          confirmButton: "confirmButton",
+        },
       });
 
       document.getElementById("submit").setAttribute("disabled", "true");
@@ -153,6 +157,10 @@ btnAgregar.addEventListener("click", () => {
       Swal.fire({
         text: `${result.mensaje}`,
         icon: "info",
+        customClass: {
+          popup: "popup",
+          confirmButton: "confirmButton",
+        },
       });
     }
   });
@@ -169,6 +177,10 @@ btnEditar.forEach((boton) => {
         Swal.fire({
           text: `${producto.mensaje}`,
           icon: "error",
+          customClass: {
+            popup: "popup",
+            confirmButton: "confirmButton",
+          },
         });
       } else {
         createModal({
@@ -240,6 +252,10 @@ btnEditar.forEach((boton) => {
             Swal.fire({
               text: `${result.mensaje}`,
               icon: "success",
+              customClass: {
+                popup: "popup",
+                confirmButton: "confirmButton",
+              },
             });
             document.getElementById("submit").setAttribute("disabled", "true");
             setTimeout(() => {
@@ -249,6 +265,10 @@ btnEditar.forEach((boton) => {
             Swal.fire({
               text: `${result.mensaje}`,
               icon: "error",
+              customClass: {
+                popup: "popup",
+                confirmButton: "confirmButton",
+              },
             });
           }
         });
@@ -257,6 +277,10 @@ btnEditar.forEach((boton) => {
       Swal.fire({
         text: `${error}`,
         icon: "error",
+        customClass: {
+          popup: "popup",
+          confirmButton: "confirmButton",
+        },
       });
     }
   });
@@ -274,6 +298,10 @@ btnEliminar.forEach((boton) => {
           Swal.fire({
             text: `${result.mensaje}`,
             icon: "success",
+            customClass: {
+              popup: "popup",
+              confirmButton: "confirmButton",
+            },
           });
           setTimeout(() => {
             location.reload();
@@ -283,12 +311,20 @@ btnEliminar.forEach((boton) => {
         Swal.fire({
           text: `${result.mensaje}`,
           icon: "error",
+          customClass: {
+            popup: "popup",
+            confirmButton: "confirmButton",
+          },
         });
       }
     } catch (error) {
       Swal.fire({
         text: `${error}`,
         icon: "error",
+        customClass: {
+          popup: "popup",
+          confirmButton: "confirmButton",
+        },
       });
     }
   });
@@ -306,6 +342,10 @@ btnActivar.forEach((boton) => {
           Swal.fire({
             text: `${result.mensaje}`,
             icon: "success",
+            customClass: {
+              popup: "popup",
+              confirmButton: "confirmButton",
+            },
           });
           setTimeout(() => {
             location.reload();
@@ -315,12 +355,20 @@ btnActivar.forEach((boton) => {
         Swal.fire({
           text: `${result.mensaje}`,
           icon: "error",
+          customClass: {
+            popup: "popup",
+            confirmButton: "confirmButton",
+          },
         });
       }
     } catch (error) {
       Swal.fire({
         text: `${error}`,
         icon: "error",
+        customClass: {
+          popup: "popup",
+          confirmButton: "confirmButton",
+        },
       });
     }
   });
@@ -337,6 +385,10 @@ async function insertarDatos(formData) {
     Swal.fire({
       text: `${error}`,
       icon: "error",
+      customClass: {
+        popup: "popup",
+        confirmButton: "confirmButton",
+      },
     });
   }
 }
@@ -352,6 +404,10 @@ async function editarProducto(formData, idProducto) {
     Swal.fire({
       text: `${error}`,
       icon: "error",
+      customClass: {
+        popup: "popup",
+        confirmButton: "confirmButton",
+      },
     });
   }
 }
@@ -366,6 +422,10 @@ async function eliminarProducto(idProducto) {
     Swal.fire({
       text: `${error}`,
       icon: "error",
+      customClass: {
+        popup: "popup",
+        confirmButton: "confirmButton",
+      },
     });
   }
 }
@@ -380,6 +440,10 @@ async function reactivarProducto(idProducto) {
     Swal.fire({
       text: `${error}`,
       icon: "error",
+      customClass: {
+        popup: "popup",
+        confirmButton: "confirmButton",
+      },
     });
   }
 }
