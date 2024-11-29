@@ -13,19 +13,6 @@ body.dark-mode {
   background-color: #242124;
 }
 
-.toastify {
-  border-radius: 15px;
-  font-size: 12px;
-  background: #242124;
-  box-shadow: none;
-}
-
-body.dark-mode .toastify {
-  background: #dad2bc;
-  color: black;
-  box-shadow: none;
-}
-
 #contenedor {
   display: flex;
   align-items: center;
@@ -91,16 +78,12 @@ ul {
   align-items: center;
   gap: 10px;
 }
-.derechaNav a {
-  text-decoration: none;
-}
 
 .derechaNav .carrito-container {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 .carrito {
   font-size: 35px;
   color: black;
@@ -114,7 +97,6 @@ body.dark-mode .carrito {
   padding: 2px 6px;
   border-radius: 5px;
   font-size: 14px;
-  font-weight: bold;
 }
 body.dark-mode .numerito {
   background-color: #a99985;
@@ -156,6 +138,94 @@ body.dark-mode .numerito {
 body.dark-mode #contenedorProductos {
   background-color: #70798c;
   border: 5px solid white;
+}
+
+body.dark-mode .popup {
+  background-color: #a99985;
+}
+
+body.dark-mode .confirmButton {
+  background-color: #dad2bc;
+  color: black;
+}
+
+body.dark-mode .confirmButton:hover {
+  background-color: #dad2bc;
+  color: black;
+}
+
+.confirmButton {
+  background-color: #2c262c;
+  color: white;
+}
+
+.confirmButton:hover {
+  background-color: #393139;
+  color: white;
+}
+
+body.dark-mode .btn-primary {
+  --bs-btn-color: black;
+  --bs-btn-border-color: #dad2bc;
+  --bs-btn-bg: #dad2bc;
+  --bs-btn-hover-bg: #dad2bcc6;
+  --bs-btn-hover-border-color: #dad2bcc6;
+  --bs-btn-active-bg: #dad2bcc6;
+  --bs-btn-active-border-color: #dad2bcc6;
+}
+
+.btn-primary {
+  --bs-btn-color: white;
+  --bs-btn-border-color: #2c262c;
+  --bs-btn-bg: #2c262c;
+  --bs-btn-hover-bg: #393139;
+  --bs-btn-hover-border-color: #2c262c;
+  --bs-btn-active-bg: #393139;
+  --bs-btn-active-border-color: #2c262c;
+  font-weight: 400;
+}
+
+body.dark-mode .btn.disabled,
+body.dark-mode .btn:disabled,
+body.dark-mode fieldset:disabled .btn {
+  color: black;
+  pointer-events: none;
+  background-color: #dad2bcc6;
+  border-color: #dad2bc;
+  opacity: var(--bs-btn-disabled-opacity);
+}
+
+.btn.disabled,
+.btn:disabled,
+fieldset:disabled .btn {
+  color: white;
+  pointer-events: none;
+  background-color: #2c262c;
+  border-color: #2c262c;
+  opacity: var(--bs-btn-disabled-opacity);
+}
+
+body.dark-mode .form-control {
+  background-color: #dad2bc;
+  color: black;
+}
+
+.form-check-input {
+  background-color: black;
+  border-color: black;
+  box-shadow: none;
+  outline: none;
+}
+
+.form-check-input:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.form-check-input:checked {
+  background-color: black;
+  border-color: gray;
+  box-shadow: none;
 }
 
 #contenedorProductos img {

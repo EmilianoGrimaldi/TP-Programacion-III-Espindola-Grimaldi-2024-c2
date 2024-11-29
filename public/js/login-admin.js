@@ -81,6 +81,10 @@ async function crearAdminAutomatico() {
     Swal.fire({
       text: `${error}`,
       icon: "error",
+      customClass: {
+        popup: "popup",
+        confirmButton: "confirmButton",
+      },
     });
   }
 }
@@ -100,6 +104,10 @@ async function loguear(datosInicioSesion) {
     Swal.fire({
       text: `${error}`,
       icon: "error",
+      customClass: {
+        popup: "popup",
+        confirmButton: "confirmButton",
+      },
     });
   }
 }
@@ -119,6 +127,10 @@ document.getElementById("btnIngresar").addEventListener("click", async (e) => {
     Swal.fire({
       text: `${resultado.mensaje}`,
       icon: "error",
+      customClass: {
+        popup: "popup",
+        confirmButton: "confirmButton",
+      },
     });
   } else {
     window.location.href = "/abm";
