@@ -63,7 +63,9 @@ router.get("/pdf/:id", async (req, res) => {
       day: "numeric",
     };
     const fechaFormateada = fecha.toLocaleDateString("es-AR", opciones);
-    const horaFormateada = fecha.toLocaleTimeString("es-AR");
+    const horaFormateada = fecha.toLocaleTimeString("es-AR", {
+      hour12: false,
+    });
     const fechaCompleta = `${fechaFormateada}, ${horaFormateada}`;
 
     const documento = await PDFDocument.create();
@@ -148,6 +150,7 @@ router.get("/:id", async (req, res) => {
     const ventaJSON = venta.toJSON();
 
     const fecha = new Date(ventaJSON.FechaVenta);
+
     const opciones = {
       weekday: "long",
       year: "numeric",
@@ -155,7 +158,9 @@ router.get("/:id", async (req, res) => {
       day: "numeric",
     };
     const fechaFormateada = fecha.toLocaleDateString("es-AR", opciones);
-    const horaFormateada = fecha.toLocaleTimeString("es-AR");
+    const horaFormateada = fecha.toLocaleTimeString("es-AR", {
+      hour12: false,
+    });
 
     const fechaCompleta = `${fechaFormateada}, ${horaFormateada}`;
 
