@@ -1,74 +1,94 @@
-<p align="center">
-<img src="https://github.com/EmilianoGrimaldi/TP-Programacion-III-Espindola-Grimaldi-2024-c2/blob/main/public/images/1.png" alt="Logo">
-</p>
+-----
 
-<h1 align="center">GAME REEL</h1>
+# 🎮 Game Reel - E-commerce de Videojuegos y Películas
 
-Bienvenidos a **Game Reel**! Aplicación web de comercio electrónico fullstack con diseño responsivo, pensada para ofrecer una experiencia completa en compra de videojuegos y películas y que cuenta con un panel de administrador para gestionar fácilmente el inventario.
+**Game Reel** es una aplicación web Fullstack de comercio electrónico diseñada para la venta de videojuegos y películas. Ofrece una experiencia de usuario completa con carrito de compras, generación de tickets en PDF y un panel de administración protegido para la gestión del inventario y reportes en Excel.
 
-<p align="center">
-:globe_with_meridians: :point_right: <a href="https://game-reel-vercel.vercel.app/">Accedé a Game Reel acá!</a> 
-</p>
+## 🚀 Características Principales
 
+### 🛒 Para Clientes
 
-![inicio](https://github.com/user-attachments/assets/d34cc1c0-22a4-44bd-a2c0-05881bcd7b5b)
+  * **Catálogo Interactivo:** Navegación por productos con filtrado por categorías (Juegos/Películas).
+  * **Carrito de Compras:** Agregar, modificar cantidades, eliminar ítems y vaciar carrito.
+  * **Checkout y Tickets:** Procesamiento de compras y generación automática de comprobantes en **PDF** (usando `pdf-lib`).
+  * **Interfaz Responsiva:** Diseño adaptable con modo oscuro/claro.
 
-## :sparkles: Funcionalidades
+### 🛠️ Panel de Administración (ABM)
 
-<h3>Para usuarios:</h3>
+  * **Gestión de Productos:** Crear, Leer, Actualizar y Eliminar (CRUD) productos del catálogo.
+  * **Subida de Imágenes:** Carga de portadas de juegos/películas mediante `multer`.
+  * **Reportes:** Exportación del historial de ventas a formato **Excel** (`xlsx`).
+  * **Seguridad:** Acceso restringido a las rutas de administración.
 
-- :heavy_plus_sign: Navegar por el catálogo y añadir productos al carrito.  
-- :mag: Filtrar por videojuegos o películas para tu comodidad.  
-- :shopping_cart: En el carrito podés ajustar la cantidad de productos, eliminarlos o vaciarlo por completo.  
-- :receipt: Realizar la compra, generar el ticket y descargarlo en formato **PDF**.
-- :waning_crescent_moon: Cambiar entre **modo oscuro** y **modo claro**. 
+## 🛠️ Tecnologías Utilizadas
 
-  
-<h3>Para administradores:</h3>
+  * **Backend:** Node.js, Express.js
+  * **Frontend:** EJS (Motor de plantillas), HTML5, CSS3, JavaScript.
+  * **Base de Datos:** MySQL (con ORM Sequelize).
+  * **Librerías Clave:**
+      * `sequelize`: ORM para manejo de base de datos.
+      * `pdf-lib`: Generación de documentos PDF.
+      * `xlsx`: Generación de reportes de Excel.
+      * `multer`: Middleware para subida de archivos (imágenes).
+      * `ejs`: Renderizado de vistas del servidor.
 
-- :clipboard: Gestión completa de los productos: podés agregar, modificar y eliminar artículos.
-- :bar_chart: Descargar el listado de ventas realizadas en formato **Excel**.
+## ⚙️ Instalación y Configuración Local
 
-## :rocket: Tecnologías utilizadas
-- **Backend**: Node.js, Express.  
-- **Frontend**: EJS, HTML, CSS, Bootstrap. 
-- **Base de datos**: MySQL.
+Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
-## :hammer_and_wrench: Instalalo y ejecutalo localmente
+### 1\. Requisitos Previos
 
-1. **Clona el repositorio**:
-   ```bash
-   git clone https://github.com/EmilianoGrimaldi/TP-Programacion-III-Espindola-Grimaldi-2024-c2.git
-   ```
-2. **Navegá a la carpeta del proyecto**:
-   ```bash
-   cd TP-Programacion-III-Espindola-Grimaldi-2024-c2
-   ```
-3. **Instalá las dependencias**:
-   ```bash
-   npm install
-   ```
-4. **Configurá la base de datos**:
-   
-   - En MySQL creá una base de datos llamada `gamereel`.
-   - Creá un archivo `.env` con las siguientes credenciales:
-     
-   ```.env
-        NOMBREBD=gamereel
-        USER=root
-        PASSWORD=
-        HOST=localhost
-        PORTBD=3306
-        PORT=3000
-        CLAVE_SECRETA=01234567891234567890123456789012
-    ```
+  * Tener instalado **Node.js** y **NPM**.
+  * Tener instalado y ejecutando **MySQL**.
 
-5. **Corré la aplicación**:
-   ```bash
-   npm run start
-   ```
+### 2\. Clonar el Repositorio
 
-# :bust_in_silhouette: Autores
+```bash
+git clone https://github.com/EmilianoGrimaldi/TP-Programacion-III-Espindola-Grimaldi-2024-c2.git
+cd TP-Programacion-III-Espindola-Grimaldi-2024-c2
+```
 
-- _[Emiliano Grimaldi](https://www.linkedin.com/in/emigrima22/)_
-- _[Lucas Espindola](https://www.linkedin.com/in/espld/)_
+### 3\. Instalar Dependencias
+
+```bash
+npm install
+```
+
+### 4\. Configurar Variables de Entorno
+
+Crea un archivo `.env` en la raíz del proyecto y configura tus credenciales de base de datos (según tu configuración local de MySQL):
+
+```env
+NOMBREBD=gamereel
+USER=root
+PASSWORD=tu_contraseña
+HOST=localhost
+PORTBD=3306
+PORT=3000
+CLAVE_SECRETA=tu_clave_secreta_para_sesiones
+```
+
+> **Importante:** Asegúrate de crear una base de datos vacía llamada `gamereel` en tu MySQL antes de iniciar. Sequelize se encargará de crear las tablas (`sync()`).
+
+### 5\. Ejecutar la Aplicación
+
+Para entorno de desarrollo (con reinicio automático):
+
+```bash
+npm run start
+```
+
+La aplicación estará disponible en: `http://localhost:3000`
+
+## 📂 Estructura del Proyecto
+
+  * `/db`: Configuración de la conexión a MySQL con Sequelize.
+  * `/entity`: Definición de modelos y relaciones de la base de datos.
+  * `/public`: Archivos estáticos (CSS, Imágenes, Scripts del lado del cliente).
+  * `/routes`: Definición de las rutas de la API y vistas (Admin, Carrito, Productos).
+  * `/uploads`: Carpeta destino para las imágenes subidas por el administrador.
+  * `/views`: Plantillas EJS para el renderizado del frontend.
+
+-----
+
+**Autores:** [Emiliano Grimaldi] & [Lucas Espindola]
